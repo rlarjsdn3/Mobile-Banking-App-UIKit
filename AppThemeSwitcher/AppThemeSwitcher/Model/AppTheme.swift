@@ -33,4 +33,15 @@ enum AppTheme: String, CaseIterable {
             return .purple
         }
     }
+    
+    var colorScheme: ColorScheme? {
+        switch self {
+        case .default:
+            return nil // 시스템 설정값을 나타냄
+        case .light:
+            return .light
+        case .dark:
+            return .dark
+        }
+    }
 }

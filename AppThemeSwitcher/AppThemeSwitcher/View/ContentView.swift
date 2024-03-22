@@ -10,8 +10,13 @@ import SwiftUI
 struct ContentView: View {
     
     // MARK: - Properties
+    @Environment(\.colorScheme) var colorScheme
+    
     @State private var presentThemeSwitcherView: Bool = false
     
+    @AppStorage("appTheme") private var appTheme: AppTheme = .default
+    
+    // MARK: - Body
     var body: some View {
         NavigationStack {
             List {
@@ -24,13 +29,15 @@ struct ContentView: View {
             .navigationTitle("Setting")
         }
         .sheet(isPresented: $presentThemeSwitcherView) {
-            ThemeSwitcherView()
+            ThemeSwitcherView(colorScheme: colorScheme)
                 .presentationDetents([.height(410)])
                 .presentationBackground(Color.clear)
         }
+        .preferredColorScheme(appTheme.colorScheme)
     }
 }
 
+// MARK: - Preview
 #Preview {
     ContentView()
 }
