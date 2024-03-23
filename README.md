@@ -10,10 +10,9 @@
 
 | 이미지 |
 | :--: |
-|  |
+| ![Simulator Screen Recording - iPhone 15 Pro - 2024-03-19 at 19 37 05](https://github.com/rlarjsdn3/app-theme-switcher-swiftui-toy-project/assets/21079970/c488af1f-c5a6-4105-af1b-d3a2197613e6) |
  
 ## 👩🏻‍💻Reference
 
 * [SwiftUI App Theme Switcher - Dark Mode Switch](https://www.youtube.com/watch?v=aHtDymtNdSs)
-
 
