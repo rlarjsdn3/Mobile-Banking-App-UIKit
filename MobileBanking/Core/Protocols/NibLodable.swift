@@ -39,7 +39,7 @@ extension NibLodable where Self: UIView {
     /// nib 파일을 인스턴스화하고 현재 뷰에 하위 뷰로 추가합니다.
     /// - Parameter owner: nib 파일 로딩 시 사용할 owner 객체
     func loadFromNib(owner: AnyObject) {
-        guard let nibView = Self.nib.instantiate(withOwner: self).first as? UIView else {
+        guard let nibView = Self.nib.instantiate(withOwner: self, options: nil).first as? UIView else {
             fatalError("Nib 로딩 실패: \(Self.nibName)")
         }
 
