@@ -9,7 +9,9 @@ import Foundation
 
 /// 지출 내역을 나타내는 모델입니다.
 /// 항목 제목, 부제목(설명), 금액 정보를 포함합니다.
-struct Expense {
+struct Expense: Identifiable {
+
+    let id = UUID()
 
     /// 지출 항목의 제목입니다. 예: "카페", "식비"
     let title: String
@@ -19,6 +21,9 @@ struct Expense {
 
     /// 지출 금액입니다. 단위는 보통 통화(예: 원, 달러)입니다.
     let amount: Double
+}
+
+extension Expense: Hashable {
 }
 
 extension Expense {

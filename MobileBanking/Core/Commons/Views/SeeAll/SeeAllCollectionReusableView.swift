@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class SeeAllCollectionReusableView: UICollectionReusableView {
+final class SeeAllCollectionReusableView: NibCollectionReusableView {
 
     override func awakeFromNib() {
         super.awakeFromNib()

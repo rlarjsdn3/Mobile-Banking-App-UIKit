@@ -10,7 +10,9 @@ import DeveloperToolsSupport
 
 /// 결제 카드 정보를 표현하는 모델입니다.
 /// 카드 소유자, 카드 브랜드 로고, 색상, 잔액, 카드 번호 등의 정보를 포함합니다.
-struct Card {
+struct Card: Identifiable {
+
+    let id = UUID()
 
     /// 카드 소유자의 이름입니다.
     let ownerName: String
@@ -36,6 +38,9 @@ struct Card {
     var cardColor: UIColor {
         UIColor(resource: colorResource)
     }
+}
+
+extension Card: Hashable {
 }
 
 extension Card {

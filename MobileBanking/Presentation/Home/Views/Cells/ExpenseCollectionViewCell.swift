@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ExpenseCollectionViewCell: UICollectionViewCell {
+final class ExpenseCollectionViewCell: UICollectionViewCell, NibLodable {
 
     override func awakeFromNib() {
         super.awakeFromNib()

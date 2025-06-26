@@ -9,10 +9,108 @@ import UIKit
 
 final class HomeViewController: StoryboardViewController {
 
+    typealias HomeContentDiffableDataSource = UICollectionViewDiffableDataSource<HomeContent.Section, HomeContent.Item>
+
+    private var dataSource: HomeContentDiffableDataSource?
+
+    @IBOutlet weak var collectionView: UICollectionView!
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        applySnapshot()
     }
 
+    override func setupAttributes() {
+        super.setupAttributes()
+        setupCollectionViewLayout()
+        setupDataSource()
+    }
+
+    private func setupCollectionViewAttr() {
+        collectionView.delegate = self
+    }
+
+    private func setupCollectionViewLayout() {
+        let sectionProvider: UICollectionViewCompositionalLayoutSectionProvider = { [weak self] sectionIndex, environment in
+            guard let section = self?.dataSource?.sectionIdentifier(for: sectionIndex) else { return nil }
+            return section.buildLayout(with: environment)
+        }
+
+        let config = UICollectionViewCompositionalLayoutConfiguration()
+        config.scrollDirection = .vertical
+        config.interSectionSpacing = 16
+        let layout = UICollectionViewCompositionalLayout(sectionProvider: sectionProvider, configuration: config)
+
+        collectionView.collectionViewLayout = layout
+    }
+
+    private func setupDataSource() {
+        let cardCellRegistration = createCardCellRegistration()
+        let expenseCellRegistration = createExpenseCellRegistration()
+        let transactionHistoryCellRegistration = createTransactionHistoryCellRegistration()
+        let seeAllHeaderRegistration = createSeeAllHeaderRegistration()
+
+        dataSource = HomeContentDiffableDataSource(collectionView: collectionView) { collectionView, indexPath, item in
+            return item.dequeueReusableCell(
+                collectionView: collectionView,
+                cardCellRegistration: cardCellRegistration,
+                expenseCellRegistration: expenseCellRegistration,
+                transactionHistoryCellRegistration: transactionHistoryCellRegistration,
+                indexPath: indexPath
+            )
+        }
+
+        dataSource?.supplementaryViewProvider = { [weak self] collectionView, elementKind, indexPath in
+            guard elementKind == SeeAllCollectionReusableView.id,
+                  let item = self?.dataSource?.itemIdentifier(for: indexPath) else {
+                return nil
+            }
+            return item.dequeueReusableSupplementaryView(
+                collectionView: collectionView,
+                seeAllHeaderRegistration: seeAllHeaderRegistration,
+                indexPath: indexPath
+            )
+        }
+    }
+
+    private func createCardCellRegistration() -> UICollectionView.CellRegistration<CardCollectionViewCell, Card> {
+        UICollectionView.CellRegistration(cellNib: CardCollectionViewCell.nib) { cell, indexPath, card in
+            // TODO: - CardCollectionViewCell 셀 구성하기
+        }
+    }
+
+    private func createExpenseCellRegistration() -> UICollectionView.CellRegistration<ExpenseCollectionViewCell, Expense> {
+        UICollectionView.CellRegistration(cellNib: ExpenseCollectionViewCell.nib) { cell, indexPath, expense in
+            // TODO: - ExpenseCollectionViewCell 셀 구성하기
+        }
+    }
+
+    private func createTransactionHistoryCellRegistration() -> UICollectionView.CellRegistration<TransactionHistoryCollectionViewCell, TransactionHistory> {
+        UICollectionView.CellRegistration(cellNib: TransactionHistoryCollectionViewCell.nib) { cell, indexPath, history in
+            // TODO: - TransactionHistoryCollectionViewCell 셀 구성하기
+        }
+    }
+
+    private func createSeeAllHeaderRegistration() -> UICollectionView.SupplementaryRegistration<SeeAllCollectionReusableView> {
+        UICollectionView.SupplementaryRegistration(supplementaryNib: SeeAllCollectionReusableView.nib, elementKind: SeeAllCollectionReusableView.id) { supplementaryView, elementKind, indexPath in
+            // TODO: - SeeAllCollectionReusableView 헤더 구성하기
+        }
+    }
+
+    private func applySnapshot() {
+        var snapshot = NSDiffableDataSourceSnapshot<HomeContent.Section, HomeContent.Item>()
+        snapshot.appendSections([])
+        snapshot.appendItems([], toSection: nil)
+        dataSource?.apply(snapshot)
+    }
+}
+
+
+// MARK: - UICollectionViewDelegate
+
+extension HomeViewController: UICollectionViewDelegate {
 
 }
 

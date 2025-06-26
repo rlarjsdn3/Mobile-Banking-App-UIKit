@@ -10,7 +10,9 @@ import DeveloperToolsSupport
 
 /// 단일 거래 내역 정보를 표현하는 모델입니다.
 /// 거래에 사용된 이미지, 제목, 날짜, 금액 정보를 포함합니다.
-struct TransactionHistory {
+struct TransactionHistory: Identifiable {
+
+    let id = UUID()
 
     /// 거래와 연관된 이미지 리소스입니다.
     let imageResource: ImageResource
@@ -28,6 +30,9 @@ struct TransactionHistory {
 
     /// 거래 금액입니다. (양수: 수입, 음수: 지출)
     let amount: Double
+}
+
+extension TransactionHistory: Hashable {
 }
 
 extension TransactionHistory {

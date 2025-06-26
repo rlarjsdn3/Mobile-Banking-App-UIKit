@@ -1,0 +1,24 @@
+//
+//  NibCollectionReusableView.swift
+//  MobileBanking
+//
+//  Created by 김건우 on 6/26/25.
+//
+
+import UIKit
+
+///
+class NibCollectionReusableView: UICollectionReusableView, NibLodable {
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+
+        MainActor.assumeIsolated {
+            setupAttributes()
+        }
+    }
+
+    ///
+    func setupAttributes() {
+    }
+}

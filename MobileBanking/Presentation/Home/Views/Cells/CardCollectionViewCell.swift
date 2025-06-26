@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class CardCollectionViewCell: UICollectionViewCell {
+final class CardCollectionViewCell: UICollectionViewCell, NibLodable {
 
     override func awakeFromNib() {
         super.awakeFromNib()

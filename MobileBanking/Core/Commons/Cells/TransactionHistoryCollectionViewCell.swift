@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TransactionHistoryCollectionViewCell: UICollectionViewListCell {
+final class TransactionHistoryCollectionViewCell: NibCollectionViewCell {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
