@@ -95,7 +95,7 @@ final class HomeViewController: StoryboardViewController {
 
     private func createSeeAllHeaderRegistration() -> UICollectionView.SupplementaryRegistration<SeeAllCollectionReusableView> {
         UICollectionView.SupplementaryRegistration(supplementaryNib: SeeAllCollectionReusableView.nib, elementKind: SeeAllCollectionReusableView.id) { supplementaryView, elementKind, indexPath in
-            // TODO: - SeeAllCollectionReusableView 헤더 구성하기
+            supplementaryView.delegate = self
         }
     }
 
@@ -117,3 +117,16 @@ extension HomeViewController: UICollectionViewDelegate {
 
 }
 
+
+
+// MARK: - SeeAllReusasbleViewDelegate
+
+extension HomeViewController: SeeAllReusableViewDelegate {
+    
+    func seeAllReusableView(
+        _ view: SeeAllCollectionReusableView,
+        didSelectSeeAllButton: UIButton
+    ) {
+        print(#function)
+    }
+}
