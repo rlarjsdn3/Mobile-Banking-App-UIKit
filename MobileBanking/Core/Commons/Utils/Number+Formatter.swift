@@ -20,13 +20,11 @@ extension NSNumber {
         ///   - plusSign: 양수일 때 표시할 접두 기호 (예: `"+"`, 기본값: `"+"`)
         ///   - minusSign: 음수일 때 표시할 접두 기호 (예: `"-"`, 기본값: `"-"`)
         ///   - currencySymbol: 사용할 통화 기호 (예: `"$"`, `"₩"`, `"€"`, 기본값: `"$"`)
-        ///   - isCurrencySymbolTrailing: 통화 기호를 숫자 뒤에 붙일지 여부 (기본값: `false`)
         ///   - fractionalDigits: 소수점 이하 자릿수 (기본값: `2`)
         case currency(
             plusSign: String? = "+",
             minusSign: String? = "-",
             currencySymbol: String = "$",
-            isCurrencySymbolTrailing: Bool = false,
             fractionalDigits: Int = 2
         )
         
@@ -35,8 +33,7 @@ extension NSNumber {
         /// 내부적으로 사용자 정의 옵션을 반영하여 포맷 문자열을 구성합니다.
         var positiveFormat: String {
             switch self {
-            case let .currency(p, _, c, t, d):
-                return resolvedFormat(p, c, t, d)
+            case let .currency(p, _, c, d): return resolvedFormat(p, c, d)
             }
         }
         
@@ -45,20 +42,15 @@ extension NSNumber {
         /// 내부적으로 사용자 정의 옵션을 반영하여 포맷 문자열을 구성합니다.
         var negativeFormat: String {
             switch self {
-            case let .currency(_, m, c, t, d): return resolvedFormat(m, c, t, d)
+            case let .currency(_, m, c, d): return resolvedFormat(m, c, d)
             }
         }
         
-        private func resolvedFormat(_ s: String?, _ c: String, _ t: Bool, _ f: Int) -> String {
-            if t {
-                return sign(s) + "0,000" + fractionalDigits(f) + c
-            } else {
-                return sign(s) + c + "0,000" + fractionalDigits(f)
-            }
+        private func resolvedFormat(_ s: String?, _ c: String, _ f: Int) -> String {
+            sign(s) + c + "0,000" + fractionalDigits(f)
         }
         
         private func sign(_ sign: String?) -> String { sign ?? "" }
-        
         private func fractionalDigits(_ digits: Int) -> String {
             guard digits > 0 else { return "" }
             return "." + String(Array(repeating: "0", count: digits))

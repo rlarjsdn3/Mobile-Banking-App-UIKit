@@ -163,7 +163,7 @@ extension HomeContent.Section {
 
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
-            heightDimension: .absolute(75)
+            heightDimension: .absolute(95)
         )
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: groupSize,
@@ -181,9 +181,10 @@ extension HomeContent.Section {
             alignment: .top
         )
         header.pinToVisibleBounds = true
+//        header.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10)
         
         let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0)
+        section.contentInsets = NSDirectionalEdgeInsets(top: -15, leading: 15, bottom: 50, trailing: 15)
         section.boundarySupplementaryItems = [header]
         
         return section

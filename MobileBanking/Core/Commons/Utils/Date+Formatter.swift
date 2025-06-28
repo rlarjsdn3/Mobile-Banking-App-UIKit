@@ -12,7 +12,7 @@ extension Date {
     /// 자주 사용하는 날짜 포맷을 정의한 열거형입니다.
     enum Formatter: String {
         /// 시:분 (예: 14:30)
-        case hhmm = "HH:mm"
+        case hhmma = "HH:mm a"
         /// 월.일.연도 (예: 06.28.2025)
         case MMddyyyy = "MM.dd.yyyy"
     }
@@ -32,6 +32,8 @@ extension Date {
     func formatted(with format: String) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = format
+        formatter.amSymbol = "am"
+        formatter.pmSymbol = "pm"
         formatter.locale = Locale(identifier: "en_us")
         return formatter.string(from: self)
     }

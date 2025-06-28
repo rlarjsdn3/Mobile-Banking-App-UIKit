@@ -19,4 +19,35 @@ final class TransactionHistoryCollectionViewCell: NibCollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        imageView.layer.cornerRadius = imageView.frame.width / 2
+        imageView.layer.masksToBounds = true
+    }
+    
+    override func setupAttributes() {
+        super.setupAttributes()
+    }
+}
+
+extension TransactionHistoryCollectionViewCell {
+    
+    func configure(with history: TransactionHistory) {
+//        imageView.image = history.image
+        titleLabel.text = history.title
+        timeLabel.text = formattedTime(history.date)
+        amountLabel.text = history.amount.formatted()
+        createAtLabel.text = history.date.formatted(with: .MMddyyyy)
+    }
+    
+    private func formattedTime(_ date: Date) -> String {
+        let formattedTime = date.formatted(with: .hhmma)
+        if let string = date.doesReleativeDateFormatted() {
+            return string + ", " + formattedTime
+        } else {
+            return formattedTime
+        }
+    }
 }

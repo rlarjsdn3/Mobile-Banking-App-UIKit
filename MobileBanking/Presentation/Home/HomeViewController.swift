@@ -89,7 +89,7 @@ final class HomeViewController: StoryboardViewController {
 
     private func createTransactionHistoryCellRegistration() -> UICollectionView.CellRegistration<TransactionHistoryCollectionViewCell, TransactionHistory> {
         UICollectionView.CellRegistration(cellNib: TransactionHistoryCollectionViewCell.nib) { cell, indexPath, history in
-            // TODO: - TransactionHistoryCollectionViewCell 셀 구성하기
+            cell.configure(with: history)
         }
     }
 

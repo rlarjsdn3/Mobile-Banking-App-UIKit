@@ -18,13 +18,13 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transaction History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ipc-9F-vV6">
-                            <rect key="frame" x="14" y="14.666666666666664" width="155.66666666666666" height="21"/>
+                            <rect key="frame" x="0.0" y="14.666666666666664" width="155.66666666666666" height="21"/>
                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="71y-sk-8YR">
-                            <rect key="frame" x="232" y="7.6666666666666679" width="74" height="35"/>
+                            <rect key="frame" x="246" y="7.6666666666666679" width="74" height="35"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" title="See all"/>
                             <connections>
@@ -35,8 +35,8 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="71y-sk-8YR" firstAttribute="centerY" secondItem="Ipc-9F-vV6" secondAttribute="centerY" id="4VR-Qv-7rX"/>
-                        <constraint firstItem="Ipc-9F-vV6" firstAttribute="leading" secondItem="m7k-wf-Xbj" secondAttribute="leading" constant="14" id="8Gn-WM-yq1"/>
-                        <constraint firstAttribute="trailing" secondItem="71y-sk-8YR" secondAttribute="trailing" constant="14" id="LJ1-u8-Jdv"/>
+                        <constraint firstItem="Ipc-9F-vV6" firstAttribute="leading" secondItem="m7k-wf-Xbj" secondAttribute="leading" id="8Gn-WM-yq1"/>
+                        <constraint firstAttribute="trailing" secondItem="71y-sk-8YR" secondAttribute="trailing" id="LJ1-u8-Jdv"/>
                         <constraint firstItem="Ipc-9F-vV6" firstAttribute="centerY" secondItem="m7k-wf-Xbj" secondAttribute="centerY" id="UW8-Nd-fX9"/>
                     </constraints>
                 </view>
@@ -48,7 +48,10 @@
                 <constraint firstAttribute="bottom" secondItem="m7k-wf-Xbj" secondAttribute="bottom" id="Sh9-19-wEu"/>
                 <constraint firstItem="m7k-wf-Xbj" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="fNa-jL-Uwk"/>
             </constraints>
-            <point key="canvasLocation" x="139" y="20"/>
+            <connections>
+                <outlet property="seeAllButton" destination="71y-sk-8YR" id="VN6-tO-8wj"/>
+            </connections>
+            <point key="canvasLocation" x="138.93129770992365" y="19.718309859154932"/>
         </collectionReusableView>
     </objects>
     <resources>
