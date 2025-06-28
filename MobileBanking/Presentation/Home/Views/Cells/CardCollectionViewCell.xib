@@ -21,45 +21,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="386" height="200"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adom Shafi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Wq-zy-c5M">
-                                <rect key="frame" x="22" y="28" width="83.333333333333329" height="19.333333333333329"/>
+                                <rect key="frame" x="22" y="30" width="83.333333333333329" height="19.333333333333329"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <color key="textColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="visa" translatesAutoresizingMaskIntoConstraints="NO" id="7fq-EV-9mc">
-                                <rect key="frame" x="314" y="27.666666666666671" width="50" height="20"/>
+                                <rect key="frame" x="321.66666666666669" y="29.666666666666671" width="42.333333333333314" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="oGV-2k-A6e"/>
+                                    <constraint firstAttribute="width" constant="42.5" id="oGV-2k-A6e"/>
                                     <constraint firstAttribute="height" constant="20" id="zMh-hT-5Ei"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="oxO-Jx-UU0">
-                                <rect key="frame" x="22" y="100" width="178" height="66"/>
+                                <rect key="frame" x="22" y="101" width="178" height="65"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="available balance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hhi-Ls-Bfn">
-                                        <rect key="frame" x="0.0" y="0.0" width="178" height="18"/>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
-                                        <color key="textColor" systemColor="systemBackgroundColor"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available balance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hhi-Ls-Bfn">
+                                        <rect key="frame" x="0.0" y="0.0" width="178" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$8,300.90" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IM3-La-hed">
-                                        <rect key="frame" x="0.0" y="23" width="178" height="43"/>
+                                        <rect key="frame" x="0.0" y="22" width="178" height="43"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="36"/>
-                                        <color key="textColor" systemColor="systemBackgroundColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card code ....9658" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j3I-iL-kkL">
-                                <rect key="frame" x="237" y="143" width="127" height="18"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
-                                <color key="textColor" systemColor="systemBackgroundColor"/>
+                                <rect key="frame" x="244.33333333333334" y="144" width="119.66666666666666" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBlueColor"/>
                         <constraints>
-                            <constraint firstItem="1Wq-zy-c5M" firstAttribute="top" secondItem="KC7-Lh-0LU" secondAttribute="top" constant="28" id="7aL-M2-Si0"/>
+                            <constraint firstItem="1Wq-zy-c5M" firstAttribute="top" secondItem="KC7-Lh-0LU" secondAttribute="top" constant="30" id="7aL-M2-Si0"/>
                             <constraint firstAttribute="trailing" secondItem="j3I-iL-kkL" secondAttribute="trailing" constant="22" id="Gu6-Bc-ytX"/>
                             <constraint firstAttribute="bottom" secondItem="oxO-Jx-UU0" secondAttribute="bottom" constant="34" id="ZNc-Ja-phz"/>
                             <constraint firstItem="j3I-iL-kkL" firstAttribute="firstBaseline" secondItem="IM3-La-hed" secondAttribute="firstBaseline" id="gQu-MR-D1y"/>
@@ -91,9 +91,6 @@
     </objects>
     <resources>
         <image name="visa" width="256" height="256"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

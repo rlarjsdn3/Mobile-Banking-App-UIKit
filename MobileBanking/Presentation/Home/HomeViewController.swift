@@ -40,7 +40,7 @@ final class HomeViewController: StoryboardViewController {
 
         let config = UICollectionViewCompositionalLayoutConfiguration()
         config.scrollDirection = .vertical
-        config.interSectionSpacing = 16
+        config.interSectionSpacing = 12
         let layout = UICollectionViewCompositionalLayout(sectionProvider: sectionProvider, configuration: config)
 
         collectionView.collectionViewLayout = layout
@@ -77,13 +77,13 @@ final class HomeViewController: StoryboardViewController {
 
     private func createCardCellRegistration() -> UICollectionView.CellRegistration<CardCollectionViewCell, Card> {
         UICollectionView.CellRegistration(cellNib: CardCollectionViewCell.nib) { cell, indexPath, card in
-            // TODO: - CardCollectionViewCell 셀 구성하기
+            cell.configure(with: card)
         }
     }
 
     private func createExpenseCellRegistration() -> UICollectionView.CellRegistration<ExpenseCollectionViewCell, Expense> {
         UICollectionView.CellRegistration(cellNib: ExpenseCollectionViewCell.nib) { cell, indexPath, expense in
-            // TODO: - ExpenseCollectionViewCell 셀 구성하기
+            cell.configure(with: expense)
         }
     }
 

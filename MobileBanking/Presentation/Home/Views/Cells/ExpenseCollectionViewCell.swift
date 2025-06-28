@@ -20,7 +20,38 @@ final class ExpenseCollectionViewCell: NibCollectionViewCell {
         super.awakeFromNib()
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        containerView.layer.cornerRadius = 24
+        containerView.layer.cornerCurve = .continuous
+        containerView.layer.borderColor = UIColor.bankingGray.cgColor
+        containerView.layer.borderWidth = 1
+        containerView.layer.masksToBounds = true
+        
+        walletContainerView.layer.cornerRadius = walletContainerView.frame.width / 2
+        walletContainerView.layer.borderColor = UIColor.bankingGray.cgColor
+        walletContainerView.layer.borderWidth = 1
+        walletContainerView.layer.masksToBounds = true
+        
+        arrowUpAndRightContainerView.layer.cornerRadius = arrowUpAndRightContainerView.frame.width / 2
+        arrowUpAndRightContainerView.layer.borderColor = UIColor.bankingPurple.cgColor
+        arrowUpAndRightContainerView.layer.borderWidth = 1
+        arrowUpAndRightContainerView.layer.masksToBounds = true
+    }
+    
     override func setupAttributes() {
         super.setupAttributes()
+        
+        containerView.backgroundColor = .bankingSecondaryBackground
+    }
+}
+
+extension ExpenseCollectionViewCell {
+    
+    func configure(with expense: Expense) {
+        expenseTypeLabel.text = expense.title
+        expenseDescriptionLabel.text = expense.subtitle
+        amountLabel.text = expense.amount.formatted()
     }
 }

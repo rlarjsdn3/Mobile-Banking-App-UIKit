@@ -31,7 +31,7 @@ final class CardCollectionViewCell: NibCollectionViewCell {
         containerView.layer.cornerCurve = .continuous
         containerView.layer.masksToBounds = true
         
-        logoImageView.tintColor = .systemBackground
+        logoImageView.tintColor = .white
     }
 }
 

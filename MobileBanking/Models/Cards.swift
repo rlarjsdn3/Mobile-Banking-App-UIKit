@@ -55,7 +55,7 @@ extension Card {
         ),
         .init(
             ownerName: "Adom Shafi",
-            logoResource: .mastercard,
+            logoResource: .visa,
             availableBaleance: 827.30,
             cardCode: "8845",
             colorResource: .bankingBlue
@@ -69,7 +69,7 @@ extension Card {
         ),
         .init(
             ownerName: "Adom Shafi",
-            logoResource: .mastercard,
+            logoResource: .visa,
             availableBaleance: 12005.00,
             cardCode: "7789",
             colorResource: .bankingBlue
