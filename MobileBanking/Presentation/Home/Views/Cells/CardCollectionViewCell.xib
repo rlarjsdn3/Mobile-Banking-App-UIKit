@@ -34,17 +34,17 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="oxO-Jx-UU0">
-                                <rect key="frame" x="22" y="101" width="178" height="65"/>
+                                <rect key="frame" x="22" y="101" width="170.33333333333334" height="65"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available balance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hhi-Ls-Bfn">
-                                        <rect key="frame" x="0.0" y="0.0" width="178" height="17"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="170.33333333333334" height="17"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$8,300.90" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IM3-La-hed">
-                                        <rect key="frame" x="0.0" y="22" width="178" height="43"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="36"/>
+                                        <rect key="frame" x="0.0" y="22" width="170.33333333333334" height="43"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>

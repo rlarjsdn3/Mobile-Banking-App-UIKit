@@ -115,6 +115,15 @@ final class HomeViewController: StoryboardViewController {
 
 extension HomeViewController: UICollectionViewDelegate {
 
+    func collectionView(
+        _ collectionView: UICollectionView,
+        didSelectItemAt indexPath: IndexPath
+    ) {
+        if let item = self.dataSource?.itemIdentifier(for: indexPath),
+           case .card(_) = item  {
+            // TODO: - ActivityViewController로 이동하는 코드 작성
+        }
+    }
 }
 
 

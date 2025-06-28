@@ -52,6 +52,61 @@ extension ExpenseCollectionViewCell {
     func configure(with expense: Expense) {
         expenseTypeLabel.text = expense.title
         expenseDescriptionLabel.text = expense.subtitle
-        amountLabel.text = expense.amount.formatted()
+        amountLabel.attributedText = attributedAmount(expense.amount)
+    }
+    
+    private func attributedAmount(_ amount: Double) -> NSAttributedString {
+        guard let amount = formattedAmount(amount),
+              let startIndex = amount.firstIndex(where: { $0.isNumber }) else {
+            return .init()
+        }
+        
+        let endIndex = amount.endIndex
+        let ptSize = amountLabel.font.pointSize
+        
+        // 문자열에 콤마(,)가 있으면
+        if let commaIndex = amount.firstIndex(of: ",") {
+            return NSMutableAttributedString(string: amount)
+                .with(
+                    forKey: .font,
+                    from: startIndex,
+                    to: commaIndex,
+                    with: UIFont.systemFont(ofSize: 34, weight: .regular)
+                )
+                .with(
+                    forKey: .foregroundColor,
+                    from: commaIndex,
+                    to: endIndex,
+                    with: UIColor.systemGray
+                )
+                .with(
+                    forKey: .font,
+                    from: commaIndex,
+                    to: endIndex,
+                    with: UIFont.systemFont(ofSize: ptSize, weight: .regular)
+                )
+            
+        // 문자열에 콤마(,)가 없으면
+        } else {
+            return NSMutableAttributedString(string: amount)
+                .with(
+                    forKey: .font,
+                    from: startIndex,
+                    to: endIndex,
+                    with: UIFont.systemFont(ofSize: ptSize, weight: .regular)
+                )
+        }
+    }
+    
+    
+    private func formattedAmount(_ amount: Double) -> String? {
+        NSNumber(value: amount).formatted(
+            with: .currency(
+                plusSign: "",
+                minusSign: "",
+                currencySymbol: "$ ",
+                fractionalDigits: 0
+            )
+        )
     }
 }

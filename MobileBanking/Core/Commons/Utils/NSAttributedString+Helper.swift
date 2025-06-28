@@ -26,6 +26,27 @@ extension NSMutableAttributedString {
         options: NSString.CompareOptions = [.caseInsensitive],
         with value: Value
     ) -> NSMutableAttributedString {
+        guard startIndex < endIndex else { return self }
+        let aString = String(string[startIndex..<endIndex])
+        return with(forKey: key, of: aString, with: value)
+    }
+    
+    /// <#Description#>
+    /// - Parameters:
+    ///   - key: <#key description#>
+    ///   - startIndex: <#startIndex description#>
+    ///   - endIndex: <#endIndex description#>
+    ///   - options: <#options description#>
+    ///   - value: <#value description#>
+    /// - Returns: <#description#>
+    @discardableResult
+    func with<Value>(
+        forKey key: NSAttributedString.Key,
+        from startIndex: String.Index,
+        through endIndex: String.Index,
+        options: NSString.CompareOptions = [.caseInsensitive],
+        with value: Value
+    ) -> NSMutableAttributedString {
         guard startIndex <= endIndex else { return self }
         let aString = String(string[startIndex...endIndex])
         return with(forKey: key, of: aString, with: value)

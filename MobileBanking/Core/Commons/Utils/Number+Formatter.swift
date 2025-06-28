@@ -47,7 +47,7 @@ extension NSNumber {
         }
         
         private func resolvedFormat(_ s: String?, _ c: String, _ f: Int) -> String {
-            sign(s) + c + "0,000" + fractionalDigits(f)
+            sign(s) + c + "#,##0" + fractionalDigits(f)
         }
         
         private func sign(_ sign: String?) -> String { sign ?? "" }

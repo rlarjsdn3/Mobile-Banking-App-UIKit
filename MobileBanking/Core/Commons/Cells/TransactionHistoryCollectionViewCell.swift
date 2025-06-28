@@ -38,7 +38,7 @@ extension TransactionHistoryCollectionViewCell {
 //        imageView.image = history.image
         titleLabel.text = history.title
         timeLabel.text = formattedTime(history.date)
-        amountLabel.text = history.amount.formatted()
+        amountLabel.text = formattedAmount(history.amount)
         createAtLabel.text = history.date.formatted(with: .MMddyyyy)
     }
     
@@ -49,5 +49,11 @@ extension TransactionHistoryCollectionViewCell {
         } else {
             return formattedTime
         }
+    }
+    
+    private func formattedAmount(_ amount: Double) -> String? {
+        NSNumber(value: amount).formatted(
+            with: .currency(fractionalDigits: 0)
+        )
     }
 }
