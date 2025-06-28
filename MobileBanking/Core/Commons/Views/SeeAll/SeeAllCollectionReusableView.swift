@@ -11,7 +11,5 @@ final class SeeAllCollectionReusableView: NibCollectionReusableView {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
-    
 }

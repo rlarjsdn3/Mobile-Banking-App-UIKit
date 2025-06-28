@@ -14,6 +14,7 @@ final class TransactionHistoryCollectionViewCell: NibCollectionViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var amountLabel: UILabel!
     @IBOutlet weak var createAtLabel: UILabel!
+    @IBOutlet weak var seperator: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

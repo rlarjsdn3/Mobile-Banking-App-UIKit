@@ -101,8 +101,11 @@ final class HomeViewController: StoryboardViewController {
 
     private func applySnapshot() {
         var snapshot = NSDiffableDataSourceSnapshot<HomeContent.Section, HomeContent.Item>()
-        snapshot.appendSections([])
-        snapshot.appendItems([], toSection: nil)
+        
+        snapshot.appendSections([.cards, .expenses, .transactionHistories])
+        Card.mock.forEach { snapshot.appendItems([.card($0)], toSection: .cards) }
+        Expense.mock.forEach { snapshot.appendItems([.expense($0)], toSection: .expenses) }
+        TransactionHistory.mock.forEach { snapshot.appendItems([.transactionHistory($0)], toSection: .transactionHistories) }
         dataSource?.apply(snapshot)
     }
 }

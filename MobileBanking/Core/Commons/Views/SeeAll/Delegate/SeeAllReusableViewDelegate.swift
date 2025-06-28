@@ -1,5 +1,5 @@
 //
-//  SeeAllDelegate.swift
+//  SeeAllReusableViewDelegate.swift
 //  MobileBanking
 //
 //  Created by 김건우 on 6/26/25.
@@ -8,7 +8,7 @@
 import UIKit
 
 ///
-protocol SeeAllDelegate: AnyObject {
+protocol SeeAllReusableViewDelegate: AnyObject {
 
     ///
     func seeAllReusableView(

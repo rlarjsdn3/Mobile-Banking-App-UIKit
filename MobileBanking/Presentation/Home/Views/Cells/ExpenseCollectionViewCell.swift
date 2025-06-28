@@ -7,11 +7,20 @@
 
 import UIKit
 
-final class ExpenseCollectionViewCell: UICollectionViewCell, NibLodable {
+final class ExpenseCollectionViewCell: NibCollectionViewCell {
 
+    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var walletContainerView: UIView!
+    @IBOutlet weak var arrowUpAndRightContainerView: UIView!
+    @IBOutlet weak var expenseTypeLabel: UILabel!
+    @IBOutlet weak var expenseDescriptionLabel: UILabel!
+    @IBOutlet weak var amountLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
-
+    
+    override func setupAttributes() {
+        super.setupAttributes()
+    }
 }
