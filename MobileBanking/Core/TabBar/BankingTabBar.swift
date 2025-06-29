@@ -26,9 +26,4 @@ final class BankingTabBar: UITabBar {
         shapeLayer?.frame = rect
         self.layer.insertSublayer(shapeLayer!, at: 0)
     }
-
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        setNeedsDisplay(bounds)
-    }
 }

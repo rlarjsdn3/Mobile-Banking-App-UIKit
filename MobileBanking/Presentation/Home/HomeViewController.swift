@@ -89,7 +89,11 @@ final class HomeViewController: StoryboardViewController {
 
     private func createTransactionHistoryCellRegistration() -> UICollectionView.CellRegistration<TransactionHistoryCollectionViewCell, TransactionHistory> {
         UICollectionView.CellRegistration(cellNib: TransactionHistoryCollectionViewCell.nib) { cell, indexPath, history in
+            let currentIndex = self.dataSource?.indexPath(for: .transactionHistory(history))?.row
+            let totalIndex = (self.dataSource?.snapshot(for: .transactionHistories).items.count ?? 0) - 1
+            let isLast = currentIndex == totalIndex
             cell.configure(with: history)
+            cell.seperator.isHidden = isLast
         }
     }
 
@@ -119,9 +123,10 @@ extension HomeViewController: UICollectionViewDelegate {
         _ collectionView: UICollectionView,
         didSelectItemAt indexPath: IndexPath
     ) {
+        print(#function)
         if let item = self.dataSource?.itemIdentifier(for: indexPath),
            case .card(_) = item  {
-            // TODO: - ActivityViewController로 이동하는 코드 작성
+            performSegue(withIdentifier: "activitySegue", sender: nil)
         }
     }
 }

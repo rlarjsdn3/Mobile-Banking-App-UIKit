@@ -16,10 +16,6 @@ final class ExpenseCollectionViewCell: NibCollectionViewCell {
     @IBOutlet weak var expenseDescriptionLabel: UILabel!
     @IBOutlet weak var amountLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
     override func layoutSubviews() {
         super.layoutSubviews()
         

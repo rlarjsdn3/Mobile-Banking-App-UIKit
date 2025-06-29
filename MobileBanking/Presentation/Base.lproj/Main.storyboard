@@ -33,6 +33,9 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="nfL-qV-yuv"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -50,11 +53,73 @@
                     <navigationItem key="navigationItem" id="nUk-LB-ldy"/>
                     <connections>
                         <outlet property="collectionView" destination="efK-Xy-98g" id="6GP-cb-j56"/>
+                        <segue destination="WFT-sk-1rO" kind="show" identifier="activitySegue" id="nAb-O0-gC5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1060.3053435114502" y="1528.8732394366198"/>
+        </scene>
+        <!--Activity View Controller-->
+        <scene sceneID="Pop-fy-LW3">
+            <objects>
+                <viewController id="WFT-sk-1rO" customClass="ActivityViewController" customModule="MobileBanking" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aQm-Nj-cg4">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rnA-FZ-69T" customClass="ActivityNavigationBar" customModule="MobileBanking" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="118" width="393" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="JPl-61-jI4"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DqP-Kp-Q9r">
+                                <rect key="frame" x="0.0" y="168" width="393" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="mWe-kv-Uoz"/>
+                                </constraints>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="65W-sw-UN4">
+                                <rect key="frame" x="0.0" y="218" width="393" height="634"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hfN-PB-1ef">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="delegate" destination="WFT-sk-1rO" id="1ck-jd-QX7"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="FO3-dS-deP"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="65W-sw-UN4" firstAttribute="top" secondItem="DqP-Kp-Q9r" secondAttribute="bottom" id="1j0-L5-LpH"/>
+                            <constraint firstItem="65W-sw-UN4" firstAttribute="trailing" secondItem="FO3-dS-deP" secondAttribute="trailing" id="HuZ-6X-2QU"/>
+                            <constraint firstItem="rnA-FZ-69T" firstAttribute="trailing" secondItem="FO3-dS-deP" secondAttribute="trailing" id="Smd-hl-Dve"/>
+                            <constraint firstItem="DqP-Kp-Q9r" firstAttribute="top" secondItem="rnA-FZ-69T" secondAttribute="bottom" id="T4w-Mf-Q4e"/>
+                            <constraint firstItem="65W-sw-UN4" firstAttribute="leading" secondItem="FO3-dS-deP" secondAttribute="leading" id="TSr-Uj-bIl"/>
+                            <constraint firstItem="DqP-Kp-Q9r" firstAttribute="leading" secondItem="FO3-dS-deP" secondAttribute="leading" id="hWu-nG-T83"/>
+                            <constraint firstItem="rnA-FZ-69T" firstAttribute="leading" secondItem="FO3-dS-deP" secondAttribute="leading" id="mo8-RU-8Ve"/>
+                            <constraint firstAttribute="bottom" secondItem="65W-sw-UN4" secondAttribute="bottom" id="qMV-50-Rzl"/>
+                            <constraint firstItem="rnA-FZ-69T" firstAttribute="top" secondItem="FO3-dS-deP" secondAttribute="top" id="rRo-Rz-O6a"/>
+                            <constraint firstItem="DqP-Kp-Q9r" firstAttribute="trailing" secondItem="FO3-dS-deP" secondAttribute="trailing" id="uei-ER-gSF"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="jf6-0X-np8"/>
+                    <connections>
+                        <outlet property="navigationBar" destination="rnA-FZ-69T" id="twD-u2-nZA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EQ5-iI-kUW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1060.3053435114502" y="2240.8450704225352"/>
         </scene>
         <!--Wallet View Controller-->
         <scene sceneID="Abf-Rz-XnE">

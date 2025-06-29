@@ -22,7 +22,6 @@ final class BankingTabBarController: UITabBarController {
 
         self.tabBar.frame.size.height = tabHeight
         self.tabBar.frame.origin.y = view.frame.height - tabHeight
-        self.tabBar.setNeedsDisplay()
     }
 
     private func setupTabBarAppearance() {

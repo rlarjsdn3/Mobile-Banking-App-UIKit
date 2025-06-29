@@ -15,15 +15,6 @@ final class CardCollectionViewCell: NibCollectionViewCell {
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var cardCodeLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-    }
-    
     override func setupAttributes() {
         super.setupAttributes()
         
