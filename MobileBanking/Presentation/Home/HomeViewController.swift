@@ -123,7 +123,6 @@ extension HomeViewController: UICollectionViewDelegate {
         _ collectionView: UICollectionView,
         didSelectItemAt indexPath: IndexPath
     ) {
-        print(#function)
         if let item = self.dataSource?.itemIdentifier(for: indexPath),
            case .card(_) = item  {
             performSegue(withIdentifier: "activitySegue", sender: nil)

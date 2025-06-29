@@ -16,7 +16,7 @@ final class SeeAllCollectionReusableView: NibCollectionReusableView {
     
     override func setupAttributes() {
         super.setupAttributes()
-        
+
         var config = UIButton.Configuration.plain()
         config.title = "See all"
         config.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)

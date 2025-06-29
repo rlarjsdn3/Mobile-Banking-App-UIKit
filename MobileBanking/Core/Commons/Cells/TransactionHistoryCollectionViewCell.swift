@@ -15,20 +15,12 @@ final class TransactionHistoryCollectionViewCell: NibCollectionViewCell {
     @IBOutlet weak var amountLabel: UILabel!
     @IBOutlet weak var createAtLabel: UILabel!
     @IBOutlet weak var seperator: UIView!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        imageView.layer.cornerRadius = imageView.frame.width / 2
-        imageView.layer.masksToBounds = true
-    }
-    
+
     override func setupAttributes() {
         super.setupAttributes()
+
+        imageView.layer.cornerRadius = 28
+        imageView.layer.masksToBounds = true
     }
 }
 

@@ -153,23 +153,9 @@ extension HomeContent.Section {
     }
 
     private func buildTransactionHistoriesLayout(with environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection {
-        // TODO: - UICollectionLayoutListConfiguration으로 코드 수정
-        
-        let itemSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0),
-            heightDimension: .fractionalHeight(1.0)
-        )
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-
-        let groupSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0),
-            heightDimension: .absolute(95)
-        )
-        let group = NSCollectionLayoutGroup.horizontal(
-            layoutSize: groupSize,
-            repeatingSubitem: item,
-            count: 1
-        )
+        var listConfig = UICollectionLayoutListConfiguration(appearance: .plain)
+        listConfig.headerMode = .supplementary
+        listConfig.showsSeparators = false
 
         let headerSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
@@ -181,11 +167,13 @@ extension HomeContent.Section {
             alignment: .top
         )
         header.pinToVisibleBounds = true
-        
-        let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = NSDirectionalEdgeInsets(top: -15, leading: 15, bottom: 50, trailing: 15)
+        header.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 12, bottom: 0, trailing: 12)
+        header.zIndex = 999
+
+        let section = NSCollectionLayoutSection.list(using: listConfig, layoutEnvironment: environment)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 15, bottom: 50, trailing: 15)
         section.boundarySupplementaryItems = [header]
-        
+
         return section
     }
 }
