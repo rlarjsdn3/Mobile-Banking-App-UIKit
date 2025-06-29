@@ -112,9 +112,14 @@ extension HomeContent.Section {
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
 
+        let groupWidthDiemension = environment.effectContentWidthSize(
+            iphone: .fractionalWidth(1.0),
+            ipadPortrait: .fractionalWidth(0.48),
+            ipadLandscape: .fractionalWidth(0.325)
+        )
         let groupSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0),
-            heightDimension: .absolute(270)
+            widthDimension: groupWidthDiemension,
+            heightDimension: .absolute(265)
         )
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: groupSize,
@@ -130,20 +135,25 @@ extension HomeContent.Section {
 
     private func buildExpensesLayout(with environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(0.48),
+            widthDimension: .fractionalWidth(1.0),
             heightDimension: .fractionalHeight(1.0)
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
 
+        let groupHeightDimension = environment.effectContentWidthSize(
+            iphone: .fractionalWidth(0.47),
+            ipadPortrait: .fractionalWidth(0.30),
+            ipadLandscape: .fractionalWidth(0.225)
+        )
         let groupSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0),
+            widthDimension: groupHeightDimension,
             heightDimension: .absolute(190)
         )
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: groupSize,
             subitems: [item]
         )
-        group.interItemSpacing = .fixed(12)
+        group.interItemSpacing = .fixed(8)
 
         let section = NSCollectionLayoutSection(group: group)
         section.interGroupSpacing = 8
@@ -154,7 +164,7 @@ extension HomeContent.Section {
 
     private func buildTransactionHistoriesLayout(with environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection {
         var listConfig = UICollectionLayoutListConfiguration(appearance: .plain)
-        listConfig.headerMode = .supplementary
+//        listConfig.headerMode = .supplementary
         listConfig.showsSeparators = false
 
         let headerSize = NSCollectionLayoutSize(
@@ -171,7 +181,7 @@ extension HomeContent.Section {
         header.zIndex = 999
 
         let section = NSCollectionLayoutSection.list(using: listConfig, layoutEnvironment: environment)
-        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 15, bottom: 50, trailing: 15)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 14, bottom: 50, trailing: 14)
         section.boundarySupplementaryItems = [header]
 
         return section
