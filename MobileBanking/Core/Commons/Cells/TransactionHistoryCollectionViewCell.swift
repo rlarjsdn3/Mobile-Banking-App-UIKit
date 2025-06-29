@@ -27,7 +27,7 @@ final class TransactionHistoryCollectionViewCell: NibCollectionViewCell {
 extension TransactionHistoryCollectionViewCell {
     
     func configure(with history: TransactionHistory) {
-//        imageView.image = history.image
+        imageView.image = history.image
         titleLabel.text = history.title
         timeLabel.text = formattedTime(history.date)
         amountLabel.text = formattedAmount(history.amount)
