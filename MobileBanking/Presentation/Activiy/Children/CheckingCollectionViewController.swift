@@ -32,9 +32,8 @@ final class CheckingCollectionViewController: UICollectionViewController {
     }
     
     private func createCollectionViewLayout() -> UICollectionViewLayout {
-        let sectionProvider: UICollectionViewCompositionalLayoutSectionProvider = { sectionIndex, environment in
-            guard let section = self.dataSource?.sectionIdentifier(for: sectionIndex) else { return nil }
-            
+        let sectionProvider: UICollectionViewCompositionalLayoutSectionProvider = { [weak self] sectionIndex, environment in
+            guard let section = self?.dataSource?.sectionIdentifier(for: sectionIndex) else { return nil }
             return section.buildLayout(with: environment)
         }
         

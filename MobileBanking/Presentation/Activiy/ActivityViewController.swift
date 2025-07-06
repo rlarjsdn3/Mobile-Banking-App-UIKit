@@ -14,13 +14,16 @@ final class ActivityViewController: StoryboardViewController {
     @IBOutlet weak var navigationBar: ActivityNavigationBar!
     @IBOutlet weak var gradientView: LinearGradientView!
     
-
     override func setupAttributes() {
         super.setupAttributes()
         
         navigationBar.delegate = self
         categoryBarView.delegate = self
         categoryBarView.setSelectionCategory(.checking)
+        gradientView.apply(colors: [
+            UIColor.systemBackground,
+            UIColor.systemBackground.withAlphaComponent(0.0)
+        ])
     }
 }
 
@@ -30,8 +33,11 @@ extension ActivityViewController: CategoryBarViewDelegate {
         _ categoryBarView: CategoryBarView,
         didSelectCategory type: CategoryBarView.CategoryType
     ) {
-        // TODO: - 선택된 카테고리에 따라 컨테이너 뷰 달리 바꾸기
-        replaceChild(to: CheckingCollectionViewController(), container: containerView)
+        switch type {
+        case .checking: replaceChild(to: CheckingCollectionViewController(), container: self.containerView)
+        case .savings:  replaceChild(to: SavingsCollectionViewController(), container: self.containerView)
+        case .crypto:   replaceChild(to: SavingsCollectionViewController(), container: self.containerView)
+        }
     }
 }
 

@@ -33,6 +33,9 @@ struct Saving {
     let totalAmount: Double
 }
 
+extension Saving: Hashable {
+}
+
 extension Saving {
 
     /// 예금 또는 적금의 타입을 정의하는 열거형입니다.
