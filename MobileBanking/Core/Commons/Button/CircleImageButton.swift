@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(*, deprecated, renamed: "TintedCircleButton")
 final class CircleImageButton: NibView {
 
     @IBOutlet weak var circleButton: UIButton!
@@ -31,7 +32,7 @@ final class CircleImageButton: NibView {
 
         defer { circleButton.layoutIfNeeded() }
 
-        setImageEdgeInsets(38)
+        setImageEdgeInsets(10)
         setImage(.paypal, for: .normal)
         observation = circleButton.observe(\.isHighlighted, options: [.new]) { button, changed in
             Task { @MainActor in

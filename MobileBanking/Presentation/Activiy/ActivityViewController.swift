@@ -29,7 +29,7 @@ extension ActivityViewController: CategoryBarViewDelegate {
         didSelectCategory type: CategoryBarView.CategoryType
     ) {
         // TODO: - 선택된 카테고리에 따라 컨테이너 뷰 달리 바꾸기
-        addChild(CheckingCollectionViewController(), to: containerView)
+        replaceChild(to: CheckingCollectionViewController(), container: containerView)
     }
 }
 

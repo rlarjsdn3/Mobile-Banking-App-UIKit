@@ -110,9 +110,15 @@ extension CategoryBarView {
         animated: Bool = true
     ) {
         switch type {
-        case .checking: setHighlightStripPosition(.defaultHigh, .defaultLow, .defaultLow)
-        case .savings: setHighlightStripPosition(.defaultLow, .defaultHigh, .defaultLow)
-        case .crypto: setHighlightStripPosition(.defaultLow, .defaultLow, .defaultHigh)
+        case .checking:
+            setHighlightStripPosition(.defaultHigh, .defaultLow, .defaultLow)
+            setButtonLabelTextColor(.label, .secondaryLabel, .secondaryLabel)
+        case .savings:
+            setHighlightStripPosition(.defaultLow, .defaultHigh, .defaultLow)
+            setButtonLabelTextColor(.secondaryLabel, .label, .secondaryLabel)
+        case .crypto:
+            setHighlightStripPosition(.defaultLow, .defaultLow, .defaultHigh)
+            setButtonLabelTextColor(.secondaryLabel, .secondaryLabel, .label)
         }
         currentSelectedType = type
         delegate?.categoryBarView(self, didSelectCategory: type)

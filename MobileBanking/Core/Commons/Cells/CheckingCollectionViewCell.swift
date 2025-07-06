@@ -27,7 +27,8 @@ class CheckingCollectionViewCell: NibCollectionViewCell {
         super.setupAttributes()
         
         containerView.backgroundColor = .bankingGray
-        containerView.layer.cornerRadius = 18
+        containerView.layer.cornerRadius = 32
+        containerView.layer.cornerCurve = .continuous
         containerView.layer.masksToBounds = true
     }
 }
