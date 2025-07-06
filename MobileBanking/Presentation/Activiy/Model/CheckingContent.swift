@@ -124,15 +124,25 @@ extension CheckingContent.Section {
     
     // 레이아웃 다시 맞추기
     private func buildAnalyticsLayout(with environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection {
+        let itemWidthDimension: NSCollectionLayoutDimension = environment.effectContentWidthSize(
+            iphone: .fractionalWidth(0.5),
+            ipadPortrait: .fractionalWidth(0.5),
+            ipadLandscape: .fractionalWidth(0.5)
+        )
         let itemSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(0.5),
+            widthDimension: itemWidthDimension,
             heightDimension: .fractionalHeight(1.0)
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
+        let groupHeightDimension: NSCollectionLayoutDimension = environment.effectContentWidthSize(
+            iphone: .fractionalWidth(0.5),
+            ipadPortrait: .fractionalWidth(0.25),
+            ipadLandscape: .fractionalHeight(0.3)
+        )
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
-            heightDimension: .fractionalWidth(0.5) // 아이폰의 경우 width 1.0 - 아이패드 대응
+            heightDimension: groupHeightDimension
         )
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: groupSize,

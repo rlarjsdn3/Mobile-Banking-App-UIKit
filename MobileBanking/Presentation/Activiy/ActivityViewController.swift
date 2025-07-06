@@ -12,6 +12,8 @@ final class ActivityViewController: StoryboardViewController {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var categoryBarView: CategoryBarView!
     @IBOutlet weak var navigationBar: ActivityNavigationBar!
+    @IBOutlet weak var gradientView: LinearGradientView!
+    
 
     override func setupAttributes() {
         super.setupAttributes()

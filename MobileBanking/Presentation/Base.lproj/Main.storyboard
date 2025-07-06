@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dAZ-oq-5rw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dAZ-oq-5rw">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,14 +17,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wta-qV-XRz" customClass="HomeNavigationBar" customModule="MobileBanking" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="59" width="393" height="55"/>
+                                <rect key="frame" x="0.0" y="118" width="393" height="55"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="0lV-i1-uqu"/>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="efK-Xy-98g">
-                                <rect key="frame" x="0.0" y="114" width="393" height="738"/>
+                                <rect key="frame" x="0.0" y="173" width="393" height="679"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eIA-Mi-Mw4">
                                     <size key="itemSize" width="128" height="128"/>
@@ -69,32 +69,41 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rnA-FZ-69T" customClass="ActivityNavigationBar" customModule="MobileBanking" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="59" width="393" height="50"/>
+                                <rect key="frame" x="0.0" y="118" width="393" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="JPl-61-jI4"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DqP-Kp-Q9r" customClass="CategoryBarView" customModule="MobileBanking" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="109" width="393" height="50"/>
+                                <rect key="frame" x="0.0" y="168" width="393" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="mWe-kv-Uoz"/>
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1ZN-VX-rac">
-                                <rect key="frame" x="0.0" y="159" width="393" height="693"/>
+                                <rect key="frame" x="0.0" y="218" width="393" height="634"/>
                             </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2DQ-k5-y6D" customClass="LinearGradientView" customModule="MobileBanking" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="218" width="393" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="3iX-cS-Ptw"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FO3-dS-deP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="FO3-dS-deP" firstAttribute="trailing" secondItem="1ZN-VX-rac" secondAttribute="trailing" id="2gl-Mx-lRi"/>
+                            <constraint firstItem="2DQ-k5-y6D" firstAttribute="trailing" secondItem="FO3-dS-deP" secondAttribute="trailing" id="4GC-Xy-zdq"/>
+                            <constraint firstItem="2DQ-k5-y6D" firstAttribute="leading" secondItem="FO3-dS-deP" secondAttribute="leading" id="9dn-NW-V8o"/>
                             <constraint firstItem="rnA-FZ-69T" firstAttribute="trailing" secondItem="FO3-dS-deP" secondAttribute="trailing" id="Smd-hl-Dve"/>
                             <constraint firstItem="DqP-Kp-Q9r" firstAttribute="top" secondItem="rnA-FZ-69T" secondAttribute="bottom" id="T4w-Mf-Q4e"/>
                             <constraint firstAttribute="bottom" secondItem="1ZN-VX-rac" secondAttribute="bottom" id="Wab-Yi-B5T"/>
                             <constraint firstItem="1ZN-VX-rac" firstAttribute="leading" secondItem="FO3-dS-deP" secondAttribute="leading" id="XgG-zj-v9K"/>
                             <constraint firstItem="DqP-Kp-Q9r" firstAttribute="leading" secondItem="FO3-dS-deP" secondAttribute="leading" id="hWu-nG-T83"/>
+                            <constraint firstItem="2DQ-k5-y6D" firstAttribute="top" secondItem="DqP-Kp-Q9r" secondAttribute="bottom" id="mUa-OH-PKo"/>
                             <constraint firstItem="rnA-FZ-69T" firstAttribute="leading" secondItem="FO3-dS-deP" secondAttribute="leading" id="mo8-RU-8Ve"/>
                             <constraint firstItem="rnA-FZ-69T" firstAttribute="top" secondItem="FO3-dS-deP" secondAttribute="top" id="rRo-Rz-O6a"/>
                             <constraint firstItem="1ZN-VX-rac" firstAttribute="top" secondItem="DqP-Kp-Q9r" secondAttribute="bottom" id="uNE-9B-1nf"/>
@@ -105,6 +114,7 @@
                     <connections>
                         <outlet property="categoryBarView" destination="DqP-Kp-Q9r" id="zxL-7I-AZl"/>
                         <outlet property="containerView" destination="1ZN-VX-rac" id="7eu-Is-UWD"/>
+                        <outlet property="gradientView" destination="2DQ-k5-y6D" id="WYa-WZ-kvZ"/>
                         <outlet property="navigationBar" destination="rnA-FZ-69T" id="twD-u2-nZA"/>
                     </connections>
                 </viewController>
