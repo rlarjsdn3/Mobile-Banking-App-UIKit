@@ -9,17 +9,32 @@ import UIKit
 
 final class ActivityViewController: StoryboardViewController {
 
+    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var categoryBarView: CategoryBarView!
     @IBOutlet weak var navigationBar: ActivityNavigationBar!
 
     override func setupAttributes() {
         super.setupAttributes()
-
+        
         navigationBar.delegate = self
+        categoryBarView.delegate = self
+        categoryBarView.setSelectionCategory(.checking)
+    }
+}
+
+extension ActivityViewController: CategoryBarViewDelegate {
+    
+    func categoryBarView(
+        _ categoryBarView: CategoryBarView,
+        didSelectCategory type: CategoryBarView.CategoryType
+    ) {
+        // TODO: - 선택된 카테고리에 따라 컨테이너 뷰 달리 바꾸기
+        addChild(CheckingCollectionViewController(), to: containerView)
     }
 }
 
 extension ActivityViewController: ActivityNavigationBarDelegate {
-
+    
     func activityNavigationBar(
         _ activityNavigationBar: ActivityNavigationBar,
         didTapLeftButton button: UIButton
@@ -28,7 +43,7 @@ extension ActivityViewController: ActivityNavigationBarDelegate {
     }
 
     func activityNavigationBar(
-        activityNavigationBar: ActivityNavigationBar,
+        _ activityNavigationBar: ActivityNavigationBar,
         showsMenuAsPrimaryAction rightButton: UIButton
     ) -> UIMenu? {
         let topAction = [

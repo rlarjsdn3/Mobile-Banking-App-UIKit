@@ -36,7 +36,7 @@ final class ActivityNavigationBar: NibView {
 
     private func setupMenuButton() {
         if let menu = delegate?.activityNavigationBar?(
-            activityNavigationBar: self,
+            self,
             showsMenuAsPrimaryAction: rightButton
         ) {
             rightButton.menu = menu

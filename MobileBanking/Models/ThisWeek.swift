@@ -21,6 +21,9 @@ struct WeeklySpending {
     let changeRate: Double
 }
 
+extension WeeklySpending: Hashable {
+}
+
 extension WeeklySpending {
 
     /// 샘플 데이터

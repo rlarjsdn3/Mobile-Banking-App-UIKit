@@ -63,8 +63,7 @@ final class HomeViewController: StoryboardViewController {
         }
 
         dataSource?.supplementaryViewProvider = { [weak self] collectionView, elementKind, indexPath in
-            guard elementKind == SeeAllCollectionReusableView.id,
-                  let item = self?.dataSource?.itemIdentifier(for: indexPath) else {
+            guard let item = self?.dataSource?.itemIdentifier(for: indexPath) else {
                 return nil
             }
             return item.dequeueReusableSupplementaryView(

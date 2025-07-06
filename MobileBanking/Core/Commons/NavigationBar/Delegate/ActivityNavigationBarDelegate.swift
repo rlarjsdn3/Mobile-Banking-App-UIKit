@@ -24,7 +24,9 @@ import UIKit
     /// - Parameters:
     ///   - aµctivityNavigationBar: <#aµctivityNavigationBar description#>
     ///   - button: <#button description#>
-    @objc optional func activityNavigationBar(_ activityNavigationBar: ActivityNavigationBar, didTapRightButton button: UIButton
+    @objc optional func activityNavigationBar(
+        _ activityNavigationBar: ActivityNavigationBar,
+        didTapRightButton button: UIButton
     )
     
     /// <#Description#>
@@ -33,7 +35,7 @@ import UIKit
     ///   - rightButton: <#rightButton description#>
     /// - Returns: <#description#>
     @objc optional func activityNavigationBar(
-        activityNavigationBar: ActivityNavigationBar,
+        _ activityNavigationBar: ActivityNavigationBar,
         showsMenuAsPrimaryAction rightButton: UIButton
     ) -> UIMenu?
 }
