@@ -87,7 +87,6 @@ extension SavingsContent.Section {
         return section
     }
     
-    // 레이아웃 다시 확인 필요
     private func buildSavingsLayout(_ environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection {
         let itemWidthDimension: NSCollectionLayoutDimension = environment.effectContentWidthSize(
             iphone: .fractionalWidth(0.5),
