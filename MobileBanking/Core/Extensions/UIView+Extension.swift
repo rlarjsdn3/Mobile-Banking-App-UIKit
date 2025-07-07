@@ -22,12 +22,13 @@ extension UIView {
         shapeLayer.strokeColor = strokeColor.cgColor
         shapeLayer.lineWidth = lineWidth
         shapeLayer.lineJoin = .round
-        shapeLayer.lineDashPattern = [4, 4]
-        
+        shapeLayer.lineDashPattern = [2, 2]
+
         let path = CGMutablePath()
         path.move(to: .zero)
         path.addLine(to: CGPoint(x: self.frame.width, y: 0))
-        path.closeSubpath()
         shapeLayer.path = path
+
+        self.layer.addSublayer(shapeLayer)
     }
 }

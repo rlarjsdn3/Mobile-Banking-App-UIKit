@@ -12,7 +12,7 @@ final class LinearGradientView: UIView {
     private var gradientLayer: CAGradientLayer!
     
     ///
-    var colors: [UIColor] = [] {
+    var colors: [UIColor] = [.systemBackground, .systemBackground.withAlphaComponent(0.0)] {
         didSet { gradientLayer.colors = colors.map { $0.cgColor } }
     }
     

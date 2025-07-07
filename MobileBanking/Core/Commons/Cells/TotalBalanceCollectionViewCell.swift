@@ -15,6 +15,10 @@ final class TotalBalanceCollectionViewCell: NibCollectionViewCell {
     
     override func setupAttributes() {
         super.setupAttributes()
+
+        containerView.backgroundColor = .bankingGray
+        containerView.layer.cornerRadius = 24
+        containerView.layer.masksToBounds = true
     }
 }
 
@@ -23,6 +27,14 @@ extension TotalBalanceCollectionViewCell {
     /// <#Description#>
     /// - Parameter balance: <#balance description#>
     func configure(with balance: Balance) {
-        
+        titleLabel.text = balance.title
+        totalAmountLabel.text = NSNumber(value: balance.totalAmount)
+            .formatted(
+                with: .currency(
+                    plusSign: nil,
+                    minusSign: nil,
+                    fractionalDigits: 2
+                )
+            )
     }
 }

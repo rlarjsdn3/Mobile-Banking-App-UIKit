@@ -9,6 +9,7 @@ import UIKit
 
 final class SavingsCollectionViewCell: NibCollectionViewCell {
 
+    @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var imageContainerView: UIView!
     @IBOutlet weak var imageView: UIImageView!
     
@@ -20,11 +21,17 @@ final class SavingsCollectionViewCell: NibCollectionViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
     }
-    
+
     override func setupAttributes() {
         super.setupAttributes()
-        
-        
+
+        containerView.backgroundColor = .bankingGray
+        containerView.layer.cornerRadius = 32
+        containerView.layer.masksToBounds = true
+        imageContainerView.layer.cornerRadius = imageContainerView.frame.width / 2
+        imageContainerView.layer.masksToBounds = true
+        dashedLineView.addDashedLine(strokeColor: .systemBackground, lineWidth: 1.5)
+        dashedLineView.layer.masksToBounds = true
     }
 }
 
@@ -33,6 +40,10 @@ extension SavingsCollectionViewCell {
     /// <#Description#>
     /// - Parameter saving: <#saving description#>
     func configure(with saving: Saving) {
-        
+        imageView.image = saving.image.withTintColor(.systemBackground, renderingMode: .alwaysTemplate)
+        titleLabel.text = saving.title
+        totalAmountLabel.text = NSNumber(value: saving.totalAmount)
+            .formatted(with: .currency(plusSign: nil, minusSign: nil, fractionalDigits: 2))
+        expDateLabel.text = saving.expirationDate.formatted(with: .MMddyyyy)
     }
 }
