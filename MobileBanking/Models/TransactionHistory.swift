@@ -38,28 +38,28 @@ extension TransactionHistory: Hashable {
 extension TransactionHistory {
 
     static let mock: [Self] = [
-        .init(imageResource: .t1,    title: "Apple Store",       date: Date(), amount: -1299.0),
-        .init(imageResource: .t2, title: "Facebook Ads",      date: .daysAgo(-1)!, amount: -300.0),
-        .init(imageResource: .t3,  title: "Netflix Subscription", date: .daysAgo(-2)!, amount: -17.99),
-        .init(imageResource: .t6,  title: "Twitter Blue",      date: .daysAgo(-3)!, amount: -8.0),
-        .init(imageResource: .t4,   title: "NVIDIA GPU Purchase", date: .daysAgo(-4)!, amount: -999.0),
+        .init(imageResource: .google,    title: "Apple Store",       date: Date(), amount: -1299.0),
+        .init(imageResource: .apple, title: "Facebook Ads",      date: .daysAgo(-1)!, amount: -300.0),
+        .init(imageResource: .facebook,  title: "Netflix Subscription", date: .daysAgo(-2)!, amount: -17.99),
+        .init(imageResource: .apple,  title: "Twitter Blue",      date: .daysAgo(-3)!, amount: -8.0),
+        .init(imageResource: .nvidia,   title: "NVIDIA GPU Purchase", date: .daysAgo(-4)!, amount: -999.0),
 
-        .init(imageResource: .t5,    title: "iCloud Storage",    date: .daysAgo(-5)!, amount: -2.99),
-        .init(imageResource: .t6, title: "Meta Revenue Share", date: .daysAgo(-6)!, amount: 150.0),
-        .init(imageResource: .t1,  title: "Movie Refund",      date: .daysAgo(-7)!, amount: 15.0),
-        .init(imageResource: .t6,  title: "Twitter Ad Credit", date: .daysAgo(-8)!, amount: 50.0),
-        .init(imageResource: .t2,   title: "NVIDIA Developer Program", date: .daysAgo(-9)!, amount: -100.0),
+        .init(imageResource: .netflix,    title: "iCloud Storage",    date: .daysAgo(-5)!, amount: -2.99),
+        .init(imageResource: .facebook, title: "Meta Revenue Share", date: .daysAgo(-6)!, amount: 150.0),
+        .init(imageResource: .netflix,  title: "Movie Refund",      date: .daysAgo(-7)!, amount: 15.0),
+        .init(imageResource: .twitter,  title: "Twitter Ad Credit", date: .daysAgo(-8)!, amount: 50.0),
+        .init(imageResource: .nvidia,   title: "NVIDIA Developer Program", date: .daysAgo(-9)!, amount: -100.0),
 
-        .init(imageResource: .t3,    title: "Apple Music",       date: .daysAgo(-10)!, amount: -10.99),
-        .init(imageResource: .t4, title: "Facebook Marketplace Sale", date: .daysAgo(-11)!, amount: 75.0),
-        .init(imageResource: .t5,  title: "Netflix Original Donation", date: .daysAgo(-12)!, amount: -5.0),
-        .init(imageResource: .t1,  title: "X Premium",         date: .daysAgo(-13)!, amount: -8.0),
-        .init(imageResource: .t6,   title: "NVIDIA AI Course",  date: .daysAgo(-14)!, amount: -199.0),
+        .init(imageResource: .apple,    title: "Apple Music",       date: .daysAgo(-10)!, amount: -10.99),
+        .init(imageResource: .facebook, title: "Facebook Marketplace Sale", date: .daysAgo(-11)!, amount: 75.0),
+        .init(imageResource: .twitter,  title: "Netflix Original Donation", date: .daysAgo(-12)!, amount: -5.0),
+        .init(imageResource: .twitter,  title: "X Premium",         date: .daysAgo(-13)!, amount: -8.0),
+        .init(imageResource: .nvidia,   title: "NVIDIA AI Course",  date: .daysAgo(-14)!, amount: -199.0),
 
-        .init(imageResource: .t1,    title: "MacBook Repair",    date: .daysAgo(-15)!, amount: -349.0),
-        .init(imageResource: .t2, title: "Facebook Gaming Tip", date: .daysAgo(-16)!, amount: -20.0),
-        .init(imageResource: .t3,  title: "Netflix Gift",      date: .daysAgo(-17)!, amount: 25.0),
-        .init(imageResource: .t4,  title: "Twitter Sponsored Tweet", date: .daysAgo(-18)!, amount: -60.0),
-        .init(imageResource: .t5,   title: "NVIDIA Refund",     date: .daysAgo(-19)!, amount: 200.0)
+        .init(imageResource: .apple,    title: "MacBook Repair",    date: .daysAgo(-15)!, amount: -349.0),
+        .init(imageResource: .facebook, title: "Facebook Gaming Tip", date: .daysAgo(-16)!, amount: -20.0),
+        .init(imageResource: .netflix,  title: "Netflix Gift",      date: .daysAgo(-17)!, amount: 25.0),
+        .init(imageResource: .twitter,  title: "Twitter Sponsored Tweet", date: .daysAgo(-18)!, amount: -60.0),
+        .init(imageResource: .nvidia,   title: "NVIDIA Refund",     date: .daysAgo(-19)!, amount: 200.0)
     ]
 }

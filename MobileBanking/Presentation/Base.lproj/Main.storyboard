@@ -216,11 +216,11 @@
             </objects>
             <point key="canvasLocation" x="1331" y="1529"/>
         </scene>
-        <!--Item-->
+        <!--Home-->
         <scene sceneID="xrj-44-rza">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="64w-ih-Hqj" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="house" catalog="system" id="zdt-tg-5Zd"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="zdt-tg-5Zd"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="XkZ-6j-MY2">
                         <autoresizingMask key="autoresizingMask"/>
@@ -255,11 +255,11 @@
             </objects>
             <point key="canvasLocation" x="135.1145038167939" y="-2.1126760563380285"/>
         </scene>
-        <!--Item-->
+        <!--Wallet-->
         <scene sceneID="ceU-cU-fyb">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Nkc-xY-JOk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="wallet.bifold" catalog="system" id="jqB-yj-eg2"/>
+                    <tabBarItem key="tabBarItem" title="Wallet" image="wallet.bifold" catalog="system" id="jqB-yj-eg2"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gL2-bL-fZO">
                         <autoresizingMask key="autoresizingMask"/>
@@ -273,11 +273,11 @@
             </objects>
             <point key="canvasLocation" x="-266" y="820"/>
         </scene>
-        <!--Item-->
+        <!--History-->
         <scene sceneID="5S0-5N-CQL">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="ms7-zU-W5o" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="newspaper" catalog="system" id="gi7-bT-nDA"/>
+                    <tabBarItem key="tabBarItem" title="History" image="newspaper" catalog="system" id="gi7-bT-nDA"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="HCF-6y-VP6">
                         <autoresizingMask key="autoresizingMask"/>
@@ -291,11 +291,11 @@
             </objects>
             <point key="canvasLocation" x="537" y="820"/>
         </scene>
-        <!--Item-->
+        <!--Profile-->
         <scene sceneID="oDu-lf-Gd8">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="ZLU-if-UsV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="person.crop.circle" catalog="system" id="8Yh-Zi-hUs"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="person.crop.circle" catalog="system" id="8Yh-Zi-hUs"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="NWA-IC-9Gq">
                         <autoresizingMask key="autoresizingMask"/>

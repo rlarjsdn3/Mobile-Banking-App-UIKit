@@ -57,7 +57,7 @@ extension CryptoContent.Section {
 
         let section = NSCollectionLayoutSection.list(using: listConfig, layoutEnvironment: environment)
         section.decorationItems = [backgroundDecorationView]
-        section.contentInsets = NSDirectionalEdgeInsets(top: 40, leading: 20, bottom: 40, trailing: 30)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 40, leading: 30, bottom: 40, trailing: 30)
         return section
     }
 }

@@ -10,6 +10,7 @@ import UIKit
 final class TransactionHistoryCollectionViewCell: NibCollectionViewCell {
 
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var imageContainerView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var amountLabel: UILabel!
@@ -19,8 +20,9 @@ final class TransactionHistoryCollectionViewCell: NibCollectionViewCell {
     override func setupAttributes() {
         super.setupAttributes()
 
-        imageView.layer.cornerRadius = 28
-        imageView.layer.masksToBounds = true
+        imageContainerView.backgroundColor = .systemGray5
+        imageContainerView.layer.cornerRadius = imageContainerView.frame.width / 2
+        imageContainerView.layer.masksToBounds = true
     }
 }
 

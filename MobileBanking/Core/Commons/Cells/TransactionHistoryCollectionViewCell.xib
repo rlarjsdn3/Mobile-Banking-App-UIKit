@@ -24,12 +24,22 @@
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="1H7-I1-lva">
                                 <rect key="frame" x="0.0" y="14" width="336" height="56"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="rTc-Jp-fHd">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mdV-hC-FjY">
                                         <rect key="frame" x="0.0" y="0.0" width="56" height="56"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="google" translatesAutoresizingMaskIntoConstraints="NO" id="rTc-Jp-fHd">
+                                                <rect key="frame" x="12" y="12" width="32" height="32"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="rTc-Jp-fHd" secondAttribute="height" multiplier="1:1" id="yPz-vV-POS"/>
+                                            <constraint firstAttribute="trailing" secondItem="rTc-Jp-fHd" secondAttribute="trailing" constant="12" id="8Vy-DM-j3c"/>
+                                            <constraint firstItem="rTc-Jp-fHd" firstAttribute="top" secondItem="mdV-hC-FjY" secondAttribute="top" constant="12" id="UcE-au-cEE"/>
+                                            <constraint firstAttribute="width" secondItem="mdV-hC-FjY" secondAttribute="height" multiplier="1:1" id="XxG-oe-ue8"/>
+                                            <constraint firstItem="rTc-Jp-fHd" firstAttribute="leading" secondItem="mdV-hC-FjY" secondAttribute="leading" constant="12" id="avv-Ge-t44"/>
+                                            <constraint firstAttribute="bottom" secondItem="rTc-Jp-fHd" secondAttribute="bottom" constant="12" id="eUe-UL-N55"/>
                                         </constraints>
-                                    </imageView>
+                                    </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="RVd-jb-7vk">
                                         <rect key="frame" x="74" y="5.6666666666666679" width="154" height="45"/>
                                         <subviews>
@@ -104,6 +114,7 @@
             <connections>
                 <outlet property="amountLabel" destination="xXG-ns-szx" id="wEc-RU-tw3"/>
                 <outlet property="createAtLabel" destination="Ro8-q2-8bR" id="Vl6-ys-Y6e"/>
+                <outlet property="imageContainerView" destination="mdV-hC-FjY" id="q7g-qN-Rsl"/>
                 <outlet property="imageView" destination="rTc-Jp-fHd" id="AeU-3R-acX"/>
                 <outlet property="seperator" destination="CaL-JJ-LYE" id="Gyb-P2-pzp"/>
                 <outlet property="timeLabel" destination="dZV-R5-05u" id="2xm-Vb-Mox"/>
@@ -113,12 +124,12 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="profile" width="1512" height="1705.5"/>
+        <image name="google" width="256" height="256"/>
         <namedColor name="bankingGray">
             <color red="0.93699997663497925" green="0.93699997663497925" blue="0.93699997663497925" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
