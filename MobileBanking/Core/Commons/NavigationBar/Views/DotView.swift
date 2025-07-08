@@ -7,13 +7,18 @@
 
 import UIKit
 
-final class DotView: NibView {
+final class DotView: UIView {
 
     private var circleLayer: CAShapeLayer?
-    
+
+    ///
+    var circleOpacity: Float = 1.0 {
+        didSet { circleLayer?.opacity = circleOpacity }
+    }
+
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        loadFromNib(owner: self)
+        backgroundColor = .systemBackground
     }
     
     override func draw(_ rect: CGRect) {

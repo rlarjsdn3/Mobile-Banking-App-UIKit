@@ -53,19 +53,13 @@ final class CircleImageButton: NibView {
 }
 
 extension CircleImageButton {
-    
-    /// <#Description#>
-    /// - Parameters:
-    ///   - imageResource: <#imageResource description#>
-    ///   - state: <#state description#>
+
     func setImage(_ resource: ImageResource, for state: UIControl.State) {
         let image = UIImage(resource: resource)
             .withRenderingMode(.alwaysTemplate)
         circleButton.setImage(image, for: state)
     }
     
-    /// <#Description#>
-    /// - Parameter all: <#all description#>
     func setImageEdgeInsets(_ all: CGFloat) {
         circleButton.imageEdgeInsets = .init(top: all, left: all, bottom: all, right: all)
     }

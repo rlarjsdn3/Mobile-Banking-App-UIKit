@@ -10,23 +10,31 @@ import UIKit
 ///
 final class HomeNavigationBar: NibView {
 
-    ///
     @IBOutlet weak var profileImageView: UIImageView!
-    ///
     @IBOutlet weak var titleLabel: UILabel!
-    ///
     @IBOutlet weak var sqaureButton: UIButton!
-    ///
     @IBOutlet weak var dotView: DotView!
 
-    ///
-    var isHiddenDotView: Bool = false {
-        didSet { dotView.isHidden = isHiddenDotView }
-    }
+    private var observation: NSKeyValueObservation?
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         loadFromNib(owner: self)
+        setupAttributes()
+    }
+
+    override func setupAttributes() {
+        super.setupAttributes()
+
+        observation = sqaureButton.observe(\.isHighlighted, options: [.new]) { [weak self] button, changed in
+            Task { @MainActor in
+                if let newValue = changed.newValue, newValue {
+                    self?.dotView.circleOpacity = 0.75
+                } else {
+                    self?.dotView.circleOpacity = 1.0
+                }
+            }
+        }
     }
 
     override func layoutSubviews() {
