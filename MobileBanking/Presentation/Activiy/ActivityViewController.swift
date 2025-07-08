@@ -36,7 +36,7 @@ extension ActivityViewController: CategoryBarViewDelegate {
         switch type {
         case .checking: replaceChild(to: CheckingCollectionViewController(), container: self.containerView)
         case .savings:  replaceChild(to: SavingsCollectionViewController(), container: self.containerView)
-        case .crypto:   replaceChild(to: SavingsCollectionViewController(), container: self.containerView)
+        case .crypto:   replaceChild(to: CryptoCollectionViewController(), container: self.containerView)
         }
     }
 }

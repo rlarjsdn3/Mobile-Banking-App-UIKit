@@ -87,6 +87,12 @@ final class CheckingCollectionViewController: UICollectionViewController {
     
     private func createTransactionHistoryCellRegistration() -> UICollectionView.CellRegistration<TransactionHistoryCollectionViewCell, TransactionHistory> {
         UICollectionView.CellRegistration(cellNib: TransactionHistoryCollectionViewCell.nib) { cell, indexPath, history in
+            guard let section = self.dataSource?.sectionIdentifier(for: indexPath.section),
+                  let numberOfItems = self.dataSource?.snapshot(for: section).items.count else {
+                return
+            }
+            let isLast = indexPath.item + 1 == numberOfItems
+            cell.seperator.isHidden = isLast
             cell.configure(with: history)
         }
     }

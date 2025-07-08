@@ -34,6 +34,12 @@ struct Crypto {
     
     /// 전일 대비 금액 차이에 대한 변화율입니다. (예: 0.025 → 2.5%)
     let changeRate: Double
+    
+    /// 지난 24시간 동안 가격 변동 배열입니다.
+    //var price24h: [Double]
+}
+
+extension Crypto: Hashable {
 }
 
 extension Crypto {

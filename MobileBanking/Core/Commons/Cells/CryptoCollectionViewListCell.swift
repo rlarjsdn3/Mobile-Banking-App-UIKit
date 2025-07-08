@@ -15,7 +15,8 @@ final class CryptoCollectionViewListCell: NibCollectionVieweListCell {
     @IBOutlet weak var chartsView: UIView!
     @IBOutlet weak var currentPriceLabel: UILabel!
     @IBOutlet weak var changeRateLabel: UILabel!
-    
+    @IBOutlet weak var seperatorView: UIView!
+
     override func setupAttributes() {
         super.setupAttributes()
     }
