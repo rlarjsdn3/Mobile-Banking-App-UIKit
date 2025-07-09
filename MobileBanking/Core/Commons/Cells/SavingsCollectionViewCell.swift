@@ -42,8 +42,43 @@ extension SavingsCollectionViewCell {
     func configure(with saving: Saving) {
         imageView.image = saving.image.withTintColor(.systemBackground, renderingMode: .alwaysTemplate)
         titleLabel.text = saving.title
-        totalAmountLabel.text = NSNumber(value: saving.totalAmount)
-            .formatted(with: .currency(plusSign: nil, minusSign: nil, fractionalDigits: 2))
+        totalAmountLabel.attributedText = attributedAmount(saving.totalAmount)
         expDateLabel.text = saving.expirationDate.formatted(with: .MMddyyyy)
+    }
+
+    private func attributedAmount(_ amount: Double) -> NSAttributedString {
+        guard let amount = formattedAmount(amount),
+              let dotIndex = amount.firstIndex(of: ".") else {
+            return .init()
+        }
+
+        let endIndex = amount.endIndex
+
+        return NSMutableAttributedString(string: amount)
+            .with(
+                forKey: .font,
+                from: dotIndex,
+                to: endIndex,
+                with: UIFont.systemFont(ofSize: 18, weight: .regular)
+            )
+            .with(
+                forKey: .foregroundColor,
+                from: dotIndex,
+                to: endIndex,
+                with: UIColor.secondaryLabel
+            )
+
+
+    }
+
+    private func formattedAmount(_ amount: Double) -> String? {
+        NSNumber(value: amount)
+            .formatted(
+                with: .currency(
+                    plusSign: nil,
+                    minusSign: nil,
+                    fractionalDigits: 2
+                )
+            )
     }
 }

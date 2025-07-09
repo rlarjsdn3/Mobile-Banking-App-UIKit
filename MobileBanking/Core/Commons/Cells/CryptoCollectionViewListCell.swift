@@ -34,7 +34,25 @@ extension CryptoCollectionViewListCell {
     func configure(with crypto: Crypto) {
         tickerLabel.text = crypto.ticker
         fullNameLabel.text = crypto.fullName
-        currentPriceLabel.text = "\(crypto.currentPrice)"
-        changeRateLabel.text = "\(crypto.changeRate)"
+        currentPriceLabel.text = NSNumber(value: crypto.currentPrice)
+            .formatted(
+                with: .currency(
+                    plusSign: "",
+                    minusSign: "",
+                    fractionalDigits: 2
+                )
+            )
+
+        changeRateLabel.text = NSNumber(value: crypto.changeRate)
+            .formatted(
+                with: .percentage(
+                    plusSign: "+",
+                    minusSign: "-",
+                    fractionalDigits: 2
+                )
+            )
+        changeRateLabel.textColor = crypto.changeRate >= 0
+        ? .bankingGreen : .systemRed
+
     }
 }

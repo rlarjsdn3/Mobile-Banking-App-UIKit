@@ -59,7 +59,7 @@ extension Crypto {
             fullName: "Ethereum",
             currentPrice: 3421.87,
             amountDifference: -75.34,
-            changeRate: -0.025
+            changeRate: -0.0175
         ),
         .init(
             logoResource: .bitcoin,
@@ -67,7 +67,7 @@ extension Crypto {
             fullName: "Binance Coin",
             currentPrice: 589.21,
             amountDifference: 12.88,
-            changeRate: 0.025
+            changeRate: 0.0125
         ),
         .init(
             logoResource: .bitcoin,
@@ -75,7 +75,7 @@ extension Crypto {
             fullName: "Solana",
             currentPrice: 142.66,
             amountDifference: -4.22,
-            changeRate: -0.025
+            changeRate: -0.0925
         ),
         .init(
             logoResource: .bitcoin,
@@ -91,7 +91,7 @@ extension Crypto {
             fullName: "Ripple",
             currentPrice: 0.5692,
             amountDifference: -0.018,
-            changeRate: -0.025
+            changeRate: -0.0332
         ),
         .init(
             logoResource: .bitcoin,
@@ -99,7 +99,7 @@ extension Crypto {
             fullName: "Dogecoin",
             currentPrice: 0.1481,
             amountDifference: 0.0043,
-            changeRate: 0.025
+            changeRate: 0.0625
         ),
         .init(
             logoResource: .bitcoin,
@@ -107,7 +107,7 @@ extension Crypto {
             fullName: "Polkadot",
             currentPrice: 6.24,
             amountDifference: -0.31,
-            changeRate: -0.025
+            changeRate: -0.0625
         ),
         .init(
             logoResource: .bitcoin,
@@ -123,7 +123,7 @@ extension Crypto {
             fullName: "Chainlink",
             currentPrice: 14.03,
             amountDifference: 0.27,
-            changeRate: 0.025
+            changeRate: 0.0153
         )
     ]
 }

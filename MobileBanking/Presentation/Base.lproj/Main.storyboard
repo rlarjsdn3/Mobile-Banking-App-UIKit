@@ -136,20 +136,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OGL-od-0ud" customClass="CircleImageButton" customModule="MobileBanking" customModuleProvider="target">
-                                <rect key="frame" x="96.666666666666686" y="446.66666666666674" width="200" height="200"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="3jN-fU-t7e"/>
-                                    <constraint firstAttribute="width" constant="200" id="rXG-KT-U73"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1eX-q1-KH6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="OGL-od-0ud" firstAttribute="centerX" secondItem="DVE-Nt-BF8" secondAttribute="centerX" id="Cr7-Zm-R8K"/>
-                            <constraint firstItem="OGL-od-0ud" firstAttribute="top" secondItem="TZ5-Ma-iqG" secondAttribute="bottom" constant="10" id="Q1m-IQ-WOR"/>
                             <constraint firstItem="TZ5-Ma-iqG" firstAttribute="centerY" secondItem="DVE-Nt-BF8" secondAttribute="centerY" id="hoK-dL-0Ra"/>
                             <constraint firstItem="TZ5-Ma-iqG" firstAttribute="centerX" secondItem="DVE-Nt-BF8" secondAttribute="centerX" id="iEf-fT-8wP"/>
                         </constraints>
