@@ -48,13 +48,8 @@ extension CardCollectionViewCell {
             return .init()
         }
         
-        return NSMutableAttributedString(string: amount)
-            .with(
-                forKey: .font,
-                from: startIndex,
-                to: endIndex,
-                with: UIFont.systemFont(ofSize: ptSize, weight: .bold)
-            )
+        return NSAttributedString(string: amount)
+            .font(ofSize: ptSize, weight: .bold, from: startIndex, to: endIndex)
     }
     
     private func formattedAmount(_ amount: Double) -> String? {

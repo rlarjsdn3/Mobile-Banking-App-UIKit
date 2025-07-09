@@ -7,6 +7,45 @@
 
 import UIKit
 
+extension NSAttributedString {
+    
+    /// <#Description#>
+    /// - Parameters:
+    ///   - size: <#size description#>
+    ///   - weight: <#weight description#>
+    ///   - startIndex: <#startIndex description#>
+    ///   - endIndex: <#endIndex description#>
+    @discardableResult
+    func font(
+        ofSize size: CGFloat? = nil,
+        weight: UIFont.Weight,
+        from startIndex: String.Index? = nil,
+        to endIndex: String.Index? = nil
+    ) -> NSAttributedString {
+        let attr = NSMutableAttributedString(attributedString: self)
+        let font = self.attribute(.font, at: 0, effectiveRange: nil) as? UIFont
+        let ptSize = size ?? font?.pointSize ?? UIFont.preferredFont(forTextStyle: .body).pointSize
+        attr.with(forKey: .font, from: startIndex, to: endIndex, with: UIFont.systemFont(ofSize: ptSize, weight: weight))
+        return attr
+    }
+    
+    /// <#Description#>
+    /// - Parameters:
+    ///   - color: <#color description#>
+    ///   - startIndex: <#startIndex description#>
+    ///   - endIndex: <#endIndex description#>
+    /// - Returns: <#description#>
+    func forergroundColor(
+        _ color: UIColor,
+        from startIndex: String.Index? = nil,
+        to endIndex: String.Index? = nil
+    ) -> NSAttributedString {
+        var attr = NSMutableAttributedString(attributedString: self)
+        attr.with(forKey: .foregroundColor, from: startIndex, to: endIndex, with: color)
+        return attr
+    }
+}
+
 extension NSMutableAttributedString {
     
     /// 문자열의 지정한 인덱스 범위에 속성(key, value)을 적용합니다.
@@ -21,13 +60,20 @@ extension NSMutableAttributedString {
     @discardableResult
     func with<Value>(
         forKey key: NSAttributedString.Key,
-        from startIndex: String.Index,
-        to endIndex: String.Index,
+        from startIndex: String.Index?,
+        to endIndex: String.Index?,
         options: NSString.CompareOptions = [.caseInsensitive],
         with value: Value
     ) -> NSMutableAttributedString {
-        guard startIndex < endIndex else { return self }
-        let aString = String(string[startIndex..<endIndex])
+
+        let aString: String = {
+            switch (startIndex, endIndex) {
+            case let (.some(start), .some(end)) where start < end: return String(string[start..<end])
+            case let (.some(start), .none): return String(string[start...])
+            case let (.none, .some(end)):   return  String(string[..<end])
+            default: return ""
+            }
+        }()
         return with(forKey: key, of: aString, with: value)
     }
     
@@ -42,13 +88,20 @@ extension NSMutableAttributedString {
     @discardableResult
     func with<Value>(
         forKey key: NSAttributedString.Key,
-        from startIndex: String.Index,
-        through endIndex: String.Index,
+        from startIndex: String.Index?,
+        through endIndex: String.Index?,
         options: NSString.CompareOptions = [.caseInsensitive],
         with value: Value
     ) -> NSMutableAttributedString {
-        guard startIndex <= endIndex else { return self }
-        let aString = String(string[startIndex...endIndex])
+
+        let aString: String = {
+            switch (startIndex, endIndex) {
+            case let (.some(start), .some(end)) where start < end: return String(string[start...end])
+            case let (.some(start), .none): return String(string[start...])
+            case let (.none, .some(end)):   return  String(string[..<end])
+            default: return ""
+            }
+        }()
         return with(forKey: key, of: aString, with: value)
     }
     
@@ -89,5 +142,16 @@ extension NSMutableAttributedString {
         let range = range ?? NSRange(location: 0, length: length)
         self.addAttribute(key, value: value, range: range)
         return self
+    }
+}
+
+
+fileprivate extension Optional where Wrapped == String.Index? {
+
+    static func < (lhs: String.Index?, rhs: String.Index?) -> Bool {
+        guard let lhs = lhs, let rhs = rhs else {
+            return false
+        }
+        return lhs < rhs
     }
 }

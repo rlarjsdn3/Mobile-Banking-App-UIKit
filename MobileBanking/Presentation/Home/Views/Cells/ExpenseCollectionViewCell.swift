@@ -62,35 +62,14 @@ extension ExpenseCollectionViewCell {
         
         // 문자열에 콤마(,)가 있으면
         if let commaIndex = amount.firstIndex(of: ",") {
-            return NSMutableAttributedString(string: amount)
-                .with(
-                    forKey: .font,
-                    from: startIndex,
-                    to: commaIndex,
-                    with: UIFont.systemFont(ofSize: 34, weight: .regular)
-                )
-                .with(
-                    forKey: .foregroundColor,
-                    from: commaIndex,
-                    to: endIndex,
-                    with: UIColor.systemGray
-                )
-                .with(
-                    forKey: .font,
-                    from: commaIndex,
-                    to: endIndex,
-                    with: UIFont.systemFont(ofSize: ptSize, weight: .regular)
-                )
-            
+            return NSAttributedString(string: amount)
+                .font(ofSize: 34, weight: .regular, from: startIndex, to: commaIndex)
+                .font(ofSize: ptSize, weight: .regular, from: commaIndex, to: endIndex)
+                .forergroundColor(.systemGray, from: commaIndex, to: endIndex)
         // 문자열에 콤마(,)가 없으면
         } else {
             return NSMutableAttributedString(string: amount)
-                .with(
-                    forKey: .font,
-                    from: startIndex,
-                    to: endIndex,
-                    with: UIFont.systemFont(ofSize: 34, weight: .regular)
-                )
+                .font(ofSize: 34, weight: .regular, from: startIndex, to: endIndex)
         }
     }
     

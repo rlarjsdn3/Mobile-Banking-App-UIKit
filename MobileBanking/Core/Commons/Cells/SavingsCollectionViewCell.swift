@@ -54,21 +54,9 @@ extension SavingsCollectionViewCell {
 
         let endIndex = amount.endIndex
 
-        return NSMutableAttributedString(string: amount)
-            .with(
-                forKey: .font,
-                from: dotIndex,
-                to: endIndex,
-                with: UIFont.systemFont(ofSize: 18, weight: .regular)
-            )
-            .with(
-                forKey: .foregroundColor,
-                from: dotIndex,
-                to: endIndex,
-                with: UIColor.secondaryLabel
-            )
-
-
+        return NSAttributedString(string: amount)
+            .font(ofSize: 18, weight: .regular, from: dotIndex, to: endIndex)
+            .forergroundColor(.secondaryLabel, from: dotIndex, to: endIndex)
     }
 
     private func formattedAmount(_ amount: Double) -> String? {

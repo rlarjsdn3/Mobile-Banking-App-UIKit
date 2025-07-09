@@ -26,9 +26,10 @@ final class HomeNavigationBar: NibView {
     override func setupAttributes() {
         super.setupAttributes()
 
-        let name = "Adom"
-        titleLabel.attributedText = NSMutableAttributedString(string: "Hello \(name)!")
-            .with(forKey: .font, of: "\(name)!", with: UIFont.systemFont(ofSize: 20, weight: .bold))
+        let title = "Hello Adom!"
+        titleLabel.attributedText = NSAttributedString(string: title)
+            .font(ofSize: 20, weight: .bold, from: title.firstIndex(of: " "))
+        
         observation = sqaureButton.observe(\.isHighlighted, options: [.new]) { [weak self] button, changed in
             Task { @MainActor in
                 if let newValue = changed.newValue, newValue {
