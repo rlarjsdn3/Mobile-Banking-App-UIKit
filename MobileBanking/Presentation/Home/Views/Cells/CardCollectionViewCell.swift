@@ -31,10 +31,13 @@ extension CardCollectionViewCell {
     /// <#Description#>
     /// - Parameter card: <#card description#>
     func configure(with card: Card) {
+
         ownerLabel.text = card.ownerName
         availableBalanceLabel.attributedText = attributedAmount(card.availableBaleance)
         logoImageView.image = card.cardLogo.withRenderingMode(.alwaysTemplate)
-        cardCodeLabel.text = "Card Code ....\(card.cardCode)"
+        let ptSize = cardCodeLabel.font.pointSize
+        cardCodeLabel.attributedText = NSMutableAttributedString(string: "Card Code ...\(card.cardCode)")
+            .with(forKey: .font, of: "...\(card.cardCode)", with: UIFont.systemFont(ofSize: ptSize, weight: .medium))
     }
     
     private func attributedAmount(_ amount: Double) -> NSAttributedString {
