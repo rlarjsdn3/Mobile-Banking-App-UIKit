@@ -89,7 +89,7 @@ extension ExpenseCollectionViewCell {
                     forKey: .font,
                     from: startIndex,
                     to: endIndex,
-                    with: UIFont.systemFont(ofSize: ptSize, weight: .regular)
+                    with: UIFont.systemFont(ofSize: 34, weight: .regular)
                 )
         }
     }

@@ -10,6 +10,8 @@ import UIKit
 final class ThisWeekCollectionViewCell: NibCollectionViewCell {
     
     @IBOutlet weak var totalAmountLabel: UILabel!
+
+    @IBOutlet weak var amountImageView: UIImageView!
     @IBOutlet weak var amountDifferenceLabel: UILabel!
     @IBOutlet weak var differenceRateLabel: UILabel!
     
@@ -40,13 +42,31 @@ extension ThisWeekCollectionViewCell {
                 currencySymbol: "$",
                 fractionalDigits: 2)
             )
-        amountDifferenceLabel.text = NSNumber(value: thisWeek.amountDifference)
+
+        configureAmountLabel(thisWeek.amountDifference, thisWeek.changeRate)
+    }
+
+    private func configureAmountLabel(
+        _ amountDifference: Double,
+        _ changeRate: Double
+    ) {
+        amountImageView.image = amountDifference >= 0
+        ? UIImage(systemName: "arrow.up.right") : UIImage(systemName: "arrow.down.right")
+        amountImageView.tintColor = amountDifference >= 0
+        ? .bankingGreen : .systemRed
+
+        amountDifferenceLabel.text = NSNumber(value: amountDifference)
             .formatted(with: .currency(
                 plusSign: "",
-                minusSign: "",
+                minusSign: "-",
                 currencySymbol: "$",
                 fractionalDigits: 2)
             )
-        differenceRateLabel.text = "(" + thisWeek.changeRate.formatted(.percent) + ")"
+        amountDifferenceLabel.textColor = amountDifference >= 0
+        ? .bankingGreen : .systemRed
+
+        differenceRateLabel.text = "(" +    changeRate.formatted(.percent) + ")"
+        differenceRateLabel.textColor = changeRate >= 0
+        ? .bankingGreen : .systemRed
     }
 }

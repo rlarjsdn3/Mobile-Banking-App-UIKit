@@ -32,4 +32,11 @@ extension WeeklySpending {
         amountDifference: 569.82,
         changeRate: 0.0256
     )
+
+    /// 샘플 데이터
+    static let mock2: Self = .init(
+        totalAmount: 45655.40,
+        amountDifference: -569.82,
+        changeRate: -0.0256
+    )
 }
