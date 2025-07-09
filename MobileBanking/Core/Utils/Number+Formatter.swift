@@ -30,7 +30,7 @@ extension NSNumber {
 
         ///
         case percentage(
-            plusSign: String = "",
+            plusSign: String = "+",
             minusSign: String = "-",
             fractionalDigits: Int = 2
         )

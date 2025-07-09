@@ -109,7 +109,7 @@ extension CheckingContent.Section {
         
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
-            heightDimension: .absolute(200)
+            heightDimension: .absolute(210)
         )
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: groupSize,
@@ -174,7 +174,7 @@ extension CheckingContent.Section {
         header.zIndex = 999
 
         let section = NSCollectionLayoutSection.list(using: listConfig, layoutEnvironment: environment)
-        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 14, bottom: 50, trailing: 14)
+        section.contentInsets = NSDirectionalEdgeInsets(top: -12, leading: 14, bottom: 50, trailing: 14)
         section.boundarySupplementaryItems = [header]
 
         return section

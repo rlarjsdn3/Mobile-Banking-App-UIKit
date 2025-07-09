@@ -44,13 +44,7 @@ extension CryptoCollectionViewListCell {
             )
 
         changeRateLabel.text = NSNumber(value: crypto.changeRate)
-            .formatted(
-                with: .percentage(
-                    plusSign: "+",
-                    minusSign: "-",
-                    fractionalDigits: 2
-                )
-            )
+            .formatted(with: .percentage(fractionalDigits: 2))
         changeRateLabel.textColor = crypto.changeRate >= 0
         ? .bankingGreen : .systemRed
 

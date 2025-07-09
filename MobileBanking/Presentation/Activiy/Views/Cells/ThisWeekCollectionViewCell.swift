@@ -23,10 +23,10 @@ final class ThisWeekCollectionViewCell: NibCollectionViewCell {
     override func setupAttributes() {
         super.setupAttributes()
         
-        masterCardButton.setImage(.mastercard, sizeRatio: 0.45)
-        visaCardButton.setImage(.visa, sizeRatio: 0.50)
-        paypalButton.setImage(.paypal, sizeRatio: 0.35)
-        plusButton.setImage(.plus, sizeRatio: 0.25)
+        masterCardButton.setImage(.mastercard, sizeRatio: 0.50)
+        visaCardButton.setImage(.visa, sizeRatio: 0.55)
+        paypalButton.setImage(.paypal, sizeRatio: 0.40)
+        plusButton.setImage(.plus, sizeRatio: 0.30)
     }
 }
 

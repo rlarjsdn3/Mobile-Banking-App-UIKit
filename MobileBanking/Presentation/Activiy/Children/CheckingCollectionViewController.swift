@@ -38,7 +38,7 @@ final class CheckingCollectionViewController: UICollectionViewController {
         }
         
         let config = UICollectionViewCompositionalLayoutConfiguration()
-        config.interSectionSpacing = 16
+        config.interSectionSpacing = 12
         return UICollectionViewCompositionalLayout(
             sectionProvider: sectionProvider,
             configuration: config

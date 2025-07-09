@@ -12,17 +12,17 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="TransactionHistoryCollectionViewCell" customModule="MobileBanking" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="336" height="84"/>
+            <rect key="frame" x="0.0" y="0.0" width="336" height="92"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="336" height="84"/>
+                <rect key="frame" x="0.0" y="0.0" width="336" height="92"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bF1-EC-9pu">
-                        <rect key="frame" x="0.0" y="0.0" width="336" height="84"/>
+                        <rect key="frame" x="0.0" y="0.0" width="336" height="92"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="1H7-I1-lva">
-                                <rect key="frame" x="0.0" y="14" width="336" height="56"/>
+                                <rect key="frame" x="0.0" y="18" width="336" height="56"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mdV-hC-FjY">
                                         <rect key="frame" x="0.0" y="0.0" width="56" height="56"/>
@@ -83,7 +83,7 @@
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CaL-JJ-LYE">
-                                <rect key="frame" x="0.0" y="83" width="336" height="1"/>
+                                <rect key="frame" x="0.0" y="91" width="336" height="1"/>
                                 <color key="backgroundColor" name="bankingGray"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="EZl-io-5kY"/>
@@ -94,8 +94,8 @@
                         <constraints>
                             <constraint firstItem="CaL-JJ-LYE" firstAttribute="trailing" secondItem="1H7-I1-lva" secondAttribute="trailing" id="84b-oa-Ubo"/>
                             <constraint firstAttribute="bottom" secondItem="CaL-JJ-LYE" secondAttribute="bottom" id="RQs-P8-r4f"/>
-                            <constraint firstAttribute="bottom" secondItem="1H7-I1-lva" secondAttribute="bottom" constant="14" id="WY4-r4-c27"/>
-                            <constraint firstItem="1H7-I1-lva" firstAttribute="top" secondItem="bF1-EC-9pu" secondAttribute="top" constant="14" id="XhL-e4-AcQ"/>
+                            <constraint firstAttribute="bottom" secondItem="1H7-I1-lva" secondAttribute="bottom" constant="18" id="WY4-r4-c27"/>
+                            <constraint firstItem="1H7-I1-lva" firstAttribute="top" secondItem="bF1-EC-9pu" secondAttribute="top" constant="18" id="XhL-e4-AcQ"/>
                             <constraint firstAttribute="trailing" secondItem="1H7-I1-lva" secondAttribute="trailing" id="lgr-pZ-E0B"/>
                             <constraint firstItem="1H7-I1-lva" firstAttribute="leading" secondItem="bF1-EC-9pu" secondAttribute="leading" id="p8a-Ka-YsV"/>
                             <constraint firstItem="CaL-JJ-LYE" firstAttribute="leading" secondItem="1H7-I1-lva" secondAttribute="leading" id="xil-hH-DtZ"/>

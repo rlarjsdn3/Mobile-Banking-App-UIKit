@@ -49,7 +49,7 @@ extension Card {
         .init(
             ownerName: "Adom Shafi",
             logoResource: .visa,
-            availableBaleance: 1532.75,
+            availableBaleance: 8300.90,
             cardCode: "1023",
             colorResource: .bankingBlue
         ),
