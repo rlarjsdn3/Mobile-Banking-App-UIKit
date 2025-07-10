@@ -8,19 +8,19 @@
 import Foundation
 
 extension NSNumber {
-    
-    /// 통화 금액 형식을 정의하기 위한 스타일 열거형입니다.
-    ///  
-    /// 통화 기호 위치, 양수/음수 기호, 소수점 자릿수 등을 조합하여 다양한 포맷을 유연하게 구성할 수 있습니다.
+
+    /// 숫자 형식을 지정하기 위한 포맷 열거형입니다.
+    ///
+    /// 금액이나 퍼센트 등 다양한 형식으로 숫자를 표시할 수 있도록 구성되어 있습니다.
     enum Formatter {
-        
-        /// 사용자 정의 통화 포맷 형식
+
+        /// 통화 형식을 정의합니다.
         ///
         /// - Parameters:
-        ///   - plusSign: 양수일 때 표시할 접두 기호 (예: `"+"`, 기본값: `"+"`)
-        ///   - minusSign: 음수일 때 표시할 접두 기호 (예: `"-"`, 기본값: `"-"`)
-        ///   - currencySymbol: 사용할 통화 기호 (예: `"$"`, `"₩"`, `"€"`, 기본값: `"$"`)
-        ///   - fractionalDigits: 소수점 이하 자릿수 (기본값: `2`)
+        ///   - plusSign: 양수일 때 표시할 접두 기호입니다. 기본값은 `"+"`입니다.
+        ///   - minusSign: 음수일 때 표시할 접두 기호입니다. 기본값은 `"-"`입니다.
+        ///   - currencySymbol: 사용할 통화 기호입니다. 기본값은 `"$"`입니다.
+        ///   - fractionalDigits: 소수점 이하 자릿수입니다. 기본값은 `2`입니다.
         case currency(
             plusSign: String? = "+",
             minusSign: String? = "-",
@@ -28,7 +28,12 @@ extension NSNumber {
             fractionalDigits: Int = 2
         )
 
+        /// 퍼센트 형식을 정의합니다.
         ///
+        /// - Parameters:
+        ///   - plusSign: 양수일 때 표시할 접두 기호입니다. 기본값은 `"+"`입니다.
+        ///   - minusSign: 음수일 때 표시할 접두 기호입니다. 기본값은 `"-"`입니다.
+        ///   - fractionalDigits: 소수점 이하 자릿수입니다. 기본값은 `2`입니다.
         case percentage(
             plusSign: String = "+",
             minusSign: String = "-",

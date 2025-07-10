@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(*, deprecated)
 final class MarketCapCollectionViewCell: NibCollectionViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
@@ -19,9 +20,7 @@ final class MarketCapCollectionViewCell: NibCollectionViewCell {
 }
 
 extension MarketCapCollectionViewCell {
-    
-    /// <#Description#>
-    /// - Parameter marketInfo: <#marketInfo description#>
+
     func configure(with marketInfo: MarketInfo) {
     }
 }

@@ -28,9 +28,14 @@ final class CryptoCollectionViewListCell: NibCollectionVieweListCell {
 }
 
 extension CryptoCollectionViewListCell {
-    
-    /// <#Description#>
-    /// - Parameter crypto: <#crypto description#>
+
+    /// 셀에 가상자산 정보를 설정합니다.
+    ///
+    /// - Parameter crypto: 셀에 표시할 `Crypto` 모델입니다.
+    ///
+    /// 해당 메서드는 가상자산의 로고, 티커, 전체 이름, 현재 가격, 변동률,
+    /// 24시간 가격 변동 차트를 셀의 각 구성 요소에 설정합니다.
+    /// 변동률에 따라 텍스트 색상과 차트 선 색상도 동적으로 적용됩니다.
     func configure(with crypto: Crypto) {
         imageView.image = crypto.logo
         tickerLabel.text = crypto.ticker
@@ -47,10 +52,10 @@ extension CryptoCollectionViewListCell {
         changeRateLabel.text = NSNumber(value: crypto.changeRate)
             .formatted(with: .percentage(fractionalDigits: 2))
         changeRateLabel.textColor = crypto.changeRate >= 0
-        ? .systemRed : .bankingGreen
+            ? .systemRed : .bankingGreen
 
         chartsView.values = crypto.price24h
         chartsView.strokeColor = crypto.changeRate >= 0
-        ? .systemRed : .bankingGreen
+            ? .systemRed : .bankingGreen
     }
 }

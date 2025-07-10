@@ -9,13 +9,13 @@ import UIKit
 
 final class CategoryBarView: NibView {
     
-    ///
+    /// 카테고리 바에서 사용할 카테고리 종류를 정의한 열거형입니다.
     enum CategoryType {
-        case checking
-        case savings
-        case crypto
+        case checking   // 입출금 계좌
+        case savings    // 저축 계좌
+        case crypto     // 가상 자산
     }
-    
+
     @IBOutlet weak var checkingLabel: UILabel!
     @IBOutlet weak var savingsLabel: UILabel!
     @IBOutlet weak var cryptoLabel: UILabel!
@@ -26,12 +26,12 @@ final class CategoryBarView: NibView {
     
     @IBOutlet weak var tabHighlighStrip: UIView!
     
-    ///
+    /// 현재 선택된 카테고리 타입입니다. 외부에서는 읽기만 가능합니다.
     private(set) var currentSelectedType: CategoryType = .checking
-    
-    ///
+
+    /// 카테고리 선택 이벤트를 전달할 델리게이트 객체입니다.
     weak var delegate: (any CategoryBarViewDelegate)?
-    
+
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         loadFromNib(owner: self)
@@ -99,12 +99,15 @@ final class CategoryBarView: NibView {
 }
 
 extension CategoryBarView {
-    
-    
-    /// <#Description#>
+
+    /// 지정한 카테고리를 선택 상태로 전환합니다.
+    ///
     /// - Parameters:
-    ///   - type: <#type description#>
-    ///   - animated: <#animated description#>
+    ///   - type: 선택할 카테고리 타입입니다.
+    ///   - animated: 애니메이션 적용 여부입니다. 기본값은 `true`입니다.
+    ///
+    /// 해당 메서드는 선택된 카테고리에 따라 하이라이트 스트립 위치와
+    /// 레이블 색상을 변경하며, 델리게이트를 통해 선택 이벤트를 전달합니다.
     func setSelectionCategory(
         _ type: CategoryBarView.CategoryType,
         animated: Bool = true

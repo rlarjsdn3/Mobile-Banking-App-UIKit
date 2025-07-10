@@ -8,11 +8,18 @@
 import UIKit
 
 final class LineChartsView: UIView {
-
+    
+    /// 선 그래프에 사용할 값의 배열입니다.
+    ///
+    /// 그래프는 해당 값들을 기반으로 경로를 계산하여 그려지며,
+    /// 값이 변경될 때마다 자동으로 다시 그려집니다.
     var values: [Double] = [] {
         didSet { drawCharts() }
     }
 
+    /// 선 그래프의 선 색상입니다.
+    ///
+    /// 색상이 변경되면 그래프가 해당 색상으로 다시 렌더링됩니다.
     var strokeColor: UIColor = .bankingGreen {
         didSet { drawCharts() }
     }

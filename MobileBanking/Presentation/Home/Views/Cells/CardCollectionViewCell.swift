@@ -28,10 +28,14 @@ final class CardCollectionViewCell: NibCollectionViewCell {
 
 extension CardCollectionViewCell {
     
-    /// <#Description#>
-    /// - Parameter card: <#card description#>
+    /// 셀에 카드 정보를 설정합니다.
+    ///
+    /// - Parameter card: 셀에 표시할 `Card` 모델입니다.
+    ///
+    /// 해당 메서드는 카드 소유자 이름, 사용 가능 잔액, 카드 로고, 카드 코드 등의 정보를
+    /// 셀의 각 UI 구성 요소에 설정합니다. 카드 코드는 강조 폰트로 표시되며,
+    /// 카드 로고는 템플릿 모드로 렌더링되어 틴트 컬러 적용이 가능합니다.
     func configure(with card: Card) {
-
         ownerLabel.text = card.ownerName
         availableBalanceLabel.attributedText = attributedAmount(card.availableBaleance)
         logoImageView.image = card.cardLogo.withRenderingMode(.alwaysTemplate)

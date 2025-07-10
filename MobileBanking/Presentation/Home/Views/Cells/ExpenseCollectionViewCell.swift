@@ -45,6 +45,12 @@ final class ExpenseCollectionViewCell: NibCollectionViewCell {
 
 extension ExpenseCollectionViewCell {
     
+    /// 셀에 지출 정보를 설정합니다.
+    ///
+    /// - Parameter expense: 셀에 표시할 `Expense` 모델입니다.
+    ///
+    /// 해당 메서드는 전달받은 지출 정보의 제목, 설명, 금액을
+    /// 셀의 각 레이블에 설정합니다. 금액은 서식이 적용된 속성 문자열로 표시됩니다.
     func configure(with expense: Expense) {
         expenseTypeLabel.text = expense.title
         expenseDescriptionLabel.text = expense.subtitle

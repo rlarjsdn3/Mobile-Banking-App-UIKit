@@ -12,9 +12,9 @@ final class ActivityNavigationBar: NibView {
     @IBOutlet weak var leftButton: UIButton!
     @IBOutlet weak var rightButton: UIButton!
 
-    var isMenuReloaded: Bool = false
+    private var isMenuReloaded: Bool = false
 
-    ///
+    /// 내비게이션 바에서 발생하는 사용자 인터랙션을 전달받을 델리게이트입니다.
     weak var delegate: (any ActivityNavigationBarDelegate)?
 
     required init?(coder: NSCoder) {

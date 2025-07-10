@@ -8,13 +8,15 @@
 import UIKit
 
 extension NSAttributedString {
-    
-    /// <#Description#>
+
+    /// 지정한 범위에 원하는 크기와 굵기의 글꼴을 적용합니다.
+    ///
     /// - Parameters:
-    ///   - size: <#size description#>
-    ///   - weight: <#weight description#>
-    ///   - startIndex: <#startIndex description#>
-    ///   - endIndex: <#endIndex description#>
+    ///   - size: 적용할 글꼴 크기입니다. 생략하면 기존 크기를 유지하거나 기본 본문 스타일 크기를 사용합니다.
+    ///   - weight: 적용할 글꼴의 굵기입니다.
+    ///   - startIndex: 속성 적용을 시작할 문자열의 시작 인덱스입니다. 기본값은 전체 범위의 시작입니다.
+    ///   - endIndex: 속성 적용을 종료할 문자열의 끝 인덱스입니다. 기본값은 전체 범위의 끝입니다.
+    /// - Returns: 글꼴 속성이 적용된 새로운 `NSAttributedString` 객체입니다.
     @discardableResult
     func font(
         ofSize size: CGFloat? = nil,
@@ -28,13 +30,14 @@ extension NSAttributedString {
         attr.with(forKey: .font, from: startIndex, to: endIndex, with: UIFont.systemFont(ofSize: ptSize, weight: weight))
         return attr
     }
-    
-    /// <#Description#>
+
+    /// 지정한 범위에 텍스트 색상을 적용합니다.
+    ///
     /// - Parameters:
-    ///   - color: <#color description#>
-    ///   - startIndex: <#startIndex description#>
-    ///   - endIndex: <#endIndex description#>
-    /// - Returns: <#description#>
+    ///   - color: 적용할 텍스트 색상입니다.
+    ///   - startIndex: 색상 적용을 시작할 문자열의 시작 인덱스입니다. 기본값은 전체 범위의 시작입니다.
+    ///   - endIndex: 색상 적용을 종료할 문자열의 끝 인덱스입니다. 기본값은 전체 범위의 끝입니다.
+    /// - Returns: 색상이 적용된 새로운 `NSAttributedString` 객체입니다.
     func forergroundColor(
         _ color: UIColor,
         from startIndex: String.Index? = nil,
@@ -76,15 +79,19 @@ extension NSMutableAttributedString {
         }()
         return with(forKey: key, of: aString, with: value)
     }
-    
-    /// <#Description#>
+
+    /// 지정한 문자열 범위에 속성을 적용합니다.
+    ///
     /// - Parameters:
-    ///   - key: <#key description#>
-    ///   - startIndex: <#startIndex description#>
-    ///   - endIndex: <#endIndex description#>
-    ///   - options: <#options description#>
-    ///   - value: <#value description#>
-    /// - Returns: <#description#>
+    ///   - key: 적용할 속성 키입니다. 예: `.font`, `.foregroundColor`, `.underlineStyle` 등
+    ///   - startIndex: 속성 적용을 시작할 문자열의 시작 인덱스입니다. 생략하면 문자열 처음부터 적용됩니다.
+    ///   - endIndex: 속성 적용을 종료할 문자열의 끝 인덱스입니다. 생략하면 문자열 끝까지 적용됩니다.
+    ///   - options: 문자열 비교에 사용할 옵션입니다. 기본값은 대소문자 구분 없음입니다.
+    ///   - value: 적용할 속성 값입니다.
+    /// - Returns: 속성이 적용된 새로운 `NSMutableAttributedString` 객체입니다.
+    ///
+    /// 해당 메서드는 지정한 범위 내 텍스트를 추출한 후,
+    /// 해당 문자열을 기준으로 속성을 설정합니다.
     @discardableResult
     func with<Value>(
         forKey key: NSAttributedString.Key,

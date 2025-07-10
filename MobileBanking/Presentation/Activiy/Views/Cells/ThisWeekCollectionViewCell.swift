@@ -32,8 +32,12 @@ final class ThisWeekCollectionViewCell: NibCollectionViewCell {
 
 extension ThisWeekCollectionViewCell {
     
-    /// <#Description#>
-    /// - Parameter thisWeek: <#thisWeek description#>
+    /// 셀에 이번 주 지출 정보를 설정합니다.
+    ///
+    /// - Parameter thisWeek: 셀에 표시할 이번 주 지출 정보(`WeeklySpending`)입니다.
+    ///
+    /// 해당 메서드는 총 지출 금액을 통화 형식으로 포맷하여 표시하며,
+    /// 지출 증감 금액 및 변화율은 별도의 설정 메서드를 통해 레이블에 적용합니다.
     func configure(with thisWeek: WeeklySpending) {
         totalAmountLabel.text = NSNumber(value: thisWeek.totalAmount)
             .formatted(with: .currency(

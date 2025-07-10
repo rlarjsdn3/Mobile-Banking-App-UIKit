@@ -40,9 +40,14 @@ final class SavingsCollectionViewCell: NibCollectionViewCell {
 }
 
 extension SavingsCollectionViewCell {
-    
-    /// <#Description#>
-    /// - Parameter saving: <#saving description#>
+
+    /// 셀에 적금 정보를 설정합니다.
+    ///
+    /// - Parameter saving: 셀에 표시할 `Saving` 모델입니다.
+    ///
+    /// 해당 메서드는 전달받은 적금 정보를 기반으로,
+    /// 이미지, 제목, 총 금액, 만기일 등을 셀의 구성 요소에 설정합니다.
+    /// 이미지는 시스템 배경색으로 틴트 처리되며, 금액은 속성 문자열로 서식화됩니다.
     func configure(with saving: Saving) {
         imageView.image = saving.image.withTintColor(.systemBackground, renderingMode: .alwaysTemplate)
         titleLabel.text = saving.title

@@ -28,6 +28,12 @@ final class TransactionHistoryCollectionViewCell: NibCollectionViewCell {
 
 extension TransactionHistoryCollectionViewCell {
     
+    /// 거래 내역 정보를 셀에 설정합니다.
+    ///
+    /// - Parameter history: 표시할 거래 내역 정보입니다.
+    ///
+    /// 해당 메서드는 전달받은 `TransactionHistory` 객체를 기반으로
+    /// 이미지, 제목, 시간, 금액, 생성일 라벨을 각각 설정합니다.
     func configure(with history: TransactionHistory) {
         imageView.image = history.image
         titleLabel.text = history.title

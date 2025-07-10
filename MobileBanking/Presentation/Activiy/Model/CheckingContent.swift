@@ -7,23 +7,34 @@
 
 import UIKit
 
+/// 입출금 탭에서 사용되는 콘텐츠 섹션과 항목을 정의하는 열거형입니다.
+///
+/// 주간 지출, 분석 정보, 거래 내역 등을 구분하여 컬렉션 뷰 등의 구성에 활용됩니다.
 enum CheckingContent {
-    
+
+    /// 입출금 화면의 섹션을 정의한 열거형입니다.
     enum Section: Int, Hashable {
-        ///
+
+        /// 이번 주 지출 섹션입니다.
         case thisWeek
-        ///
+
+        /// 분석 정보(그래프 등) 섹션입니다.
         case analytics
-        ///
+
+        /// 개별 거래 내역 섹션입니다.
         case transactionHistories
     }
-    
+
+    /// 각 섹션에 포함될 아이템을 정의한 열거형입니다.
     enum Item: Hashable {
-        ///
+
+        /// 이번 주 지출 데이터를 나타냅니다.
         case thisWeek(WeeklySpending)
-        ///
+
+        /// 분석 정보를 나타냅니다.
         case analytics(Analytics)
-        ///
+
+        /// 개별 거래 내역을 나타냅니다.
         case transactionHistory(TransactionHistory)
     }
 }
@@ -31,14 +42,17 @@ enum CheckingContent {
 @MainActor
 extension CheckingContent.Item {
     
-    /// <#Description#>
+    /// 현재 항목(self)에 해당하는 셀을 컬렉션 뷰에서 dequeue하여 반환합니다.
+    ///
     /// - Parameters:
-    ///   - collectionView: <#collectionView description#>
-    ///   - thisWeekCellRegistration: <#thisWeekCellRegistration description#>
-    ///   - analyticsCellRegistration: <#analyticsCellRegistration description#>
-    ///   - trsansactionHistoryCellRegistration: <#trsansactionHistoryCellRegistration description#>
-    ///   - indexPath: <#indexPath description#>
-    /// - Returns: <#description#>
+    ///   - collectionView: 셀을 dequeue할 대상 컬렉션 뷰입니다.
+    ///   - thisWeekCellRegistration: `WeeklySpending` 데이터를 표시할 셀 등록 정보입니다.
+    ///   - analyticsCellRegistration: `Analytics` 데이터를 표시할 셀 등록 정보입니다.
+    ///   - transactionHistoryCellRegistration: `TransactionHistory` 데이터를 표시할 셀 등록 정보입니다.
+    ///   - indexPath: 셀을 dequeue할 위치를 나타내는 인덱스 패스입니다.
+    /// - Returns: 현재 항목에 해당하는 구성된 `UICollectionViewCell` 인스턴스를 반환합니다.
+    ///
+    /// 이 메서드는 `CheckingContent.Item`이 어떤 case인지에 따라 해당 셀 타입으로 적절히 dequeue하여 반환합니다.
     func dequeueResulableCell(
         collectionView: UICollectionView,
         thisWeekCellRegistration: UICollectionView.CellRegistration<ThisWeekCollectionViewCell, WeeklySpending>,
@@ -88,9 +102,12 @@ extension CheckingContent.Item {
 @MainActor
 extension CheckingContent.Section {
     
-    /// <#Description#>
-    /// - Parameter environment: <#environment description#>
-    /// - Returns: <#description#>
+    /// 섹션 타입에 따라 적절한 레이아웃을 생성하여 반환합니다.
+    ///
+    /// - Parameter environment: 컬렉션 뷰 레이아웃을 구성할 때 사용되는 환경 정보입니다.
+    /// - Returns: 섹션에 맞는 `NSCollectionLayoutSection` 객체를 반환합니다.
+    ///
+    /// 각 섹션(thisWeek, analytics, transactionHistories)에 따라 대응되는 전용 레이아웃 빌더를 호출합니다.
     func buildLayout(with environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection {
         switch self {
         case .thisWeek: return buildThisWeekLayout(with: environment)
@@ -98,8 +115,7 @@ extension CheckingContent.Section {
         case .transactionHistories: return buildTransactionHistoriesLayout(with: environment)
         }
     }
-    
-    // 다시 레이아웃 맞추기
+
     private func buildThisWeekLayout(with environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
@@ -121,8 +137,7 @@ extension CheckingContent.Section {
         section.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 8, bottom: 0, trailing: 8)
         return section
     }
-    
-    // 레이아웃 다시 맞추기
+
     private func buildAnalyticsLayout(with environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection {
         let itemWidthDimension: NSCollectionLayoutDimension = environment.effectContentWidthSize(
             iphone: .fractionalWidth(0.5),

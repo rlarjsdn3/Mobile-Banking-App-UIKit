@@ -7,7 +7,6 @@
 
 import UIKit
 
-///
 final class HomeNavigationBar: NibView {
 
     @IBOutlet weak var profileImageView: UIImageView!

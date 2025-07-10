@@ -10,10 +10,12 @@ import UIKit
 final class SeeAllCollectionReusableView: NibCollectionReusableView {
 
     @IBOutlet weak var seeAllButton: UIButton!
-    
+
+    /// "전체 보기" 버튼 탭 이벤트를 전달할 델리게이트입니다.
     ///
+    /// 해당 델리게이트를 통해 외부에서 버튼 동작에 대한 처리를 수행하실 수 있습니다.
     weak var delegate: (any SeeAllReusableViewDelegate)?
-    
+
     override func setupAttributes() {
         super.setupAttributes()
 

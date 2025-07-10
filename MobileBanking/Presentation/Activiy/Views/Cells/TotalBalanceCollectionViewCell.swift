@@ -24,8 +24,13 @@ final class TotalBalanceCollectionViewCell: NibCollectionViewCell {
 
 extension TotalBalanceCollectionViewCell {
     
-    /// <#Description#>
-    /// - Parameter balance: <#balance description#>
+    /// 셀에 전체 잔액 정보를 설정합니다.
+    ///
+    /// - Parameter balance: 셀에 표시할 `Balance` 모델입니다.
+    ///
+    /// 해당 메서드는 전달받은 잔액 정보를 기반으로
+    /// 제목과 총 금액을 셀의 레이블에 설정합니다.
+    /// 금액은 속성 문자열로 서식화되어 표시됩니다.
     func configure(with balance: Balance) {
         titleLabel.text = balance.title
         totalAmountLabel.attributedText = attributedAmount(balance.totalAmount)

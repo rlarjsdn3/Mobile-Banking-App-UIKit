@@ -8,5 +8,4 @@
 import Foundation
 
 final class ProfileViewController: StoryboardViewController {
-    
 }
