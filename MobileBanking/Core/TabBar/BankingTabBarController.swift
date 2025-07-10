@@ -14,6 +14,7 @@ final class BankingTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupItems()
         setupTabBarAppearance()
     }
 
@@ -22,6 +23,11 @@ final class BankingTabBarController: UITabBarController {
 
         self.tabBar.frame.size.height = tabHeight
         self.tabBar.frame.origin.y = view.frame.height - tabHeight
+    }
+
+    private func setupItems() {
+        tabBar.items?[0].image = UIImage(resource: .house).resize(newWidth: 24)
+        tabBar.items?[0].imageInsets = UIEdgeInsets(top: 6, left: 0, bottom: -10, right: 0)
     }
 
     private func setupTabBarAppearance() {

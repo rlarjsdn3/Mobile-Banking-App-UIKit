@@ -210,7 +210,7 @@
         <scene sceneID="xrj-44-rza">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="64w-ih-Hqj" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="zdt-tg-5Zd"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="house" id="zdt-tg-5Zd"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="XkZ-6j-MY2">
                         <autoresizingMask key="autoresizingMask"/>
@@ -301,7 +301,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="house" catalog="system" width="128" height="104"/>
+        <image name="house" width="256" height="256"/>
         <image name="newspaper" catalog="system" width="128" height="111"/>
         <image name="person.crop.circle" catalog="system" width="128" height="123"/>
         <image name="wallet.bifold" catalog="system" width="128" height="103"/>
