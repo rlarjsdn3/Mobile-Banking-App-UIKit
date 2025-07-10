@@ -13,7 +13,7 @@ final class CryptoCollectionViewListCell: NibCollectionVieweListCell {
     @IBOutlet weak var imageContainerView: UIView!
     @IBOutlet weak var tickerLabel: UILabel!
     @IBOutlet weak var fullNameLabel: UILabel!
-    @IBOutlet weak var chartsView: UIView!
+    @IBOutlet weak var chartsView: LineChartsView!
     @IBOutlet weak var currentPriceLabel: UILabel!
     @IBOutlet weak var changeRateLabel: UILabel!
     @IBOutlet weak var seperatorView: UIView!
@@ -32,6 +32,7 @@ extension CryptoCollectionViewListCell {
     /// <#Description#>
     /// - Parameter crypto: <#crypto description#>
     func configure(with crypto: Crypto) {
+        imageView.image = crypto.logo
         tickerLabel.text = crypto.ticker
         fullNameLabel.text = crypto.fullName
         currentPriceLabel.text = NSNumber(value: crypto.currentPrice)
@@ -46,7 +47,10 @@ extension CryptoCollectionViewListCell {
         changeRateLabel.text = NSNumber(value: crypto.changeRate)
             .formatted(with: .percentage(fractionalDigits: 2))
         changeRateLabel.textColor = crypto.changeRate >= 0
-        ? .bankingGreen : .systemRed
+        ? .systemRed : .bankingGreen
 
+        chartsView.values = crypto.price24h
+        chartsView.strokeColor = crypto.changeRate >= 0
+        ? .systemRed : .bankingGreen
     }
 }

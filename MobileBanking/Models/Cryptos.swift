@@ -36,7 +36,7 @@ struct Crypto {
     let changeRate: Double
     
     /// 지난 24시간 동안 가격 변동 배열입니다.
-    //var price24h: [Double]
+    var price24h: [Double]
 }
 
 extension Crypto: Hashable {
@@ -51,79 +51,89 @@ extension Crypto {
             fullName: "Bitcoin",
             currentPrice: 64789.20,
             amountDifference: 512.45,
-            changeRate: 0.025
+            changeRate: 0.025,
+            price24h: (1...30).map { _ in Double.random(in: 61500...68000) }
         ),
         .init(
-            logoResource: .bitcoin,
+            logoResource: .ethereum,
             ticker: "ETH",
             fullName: "Ethereum",
             currentPrice: 3421.87,
             amountDifference: -75.34,
-            changeRate: -0.0175
+            changeRate: -0.0175,
+            price24h: (1...30).map { _ in Double.random(in: 3250...3600) }
         ),
         .init(
-            logoResource: .bitcoin,
+            logoResource: .binance,
             ticker: "BNB",
             fullName: "Binance Coin",
             currentPrice: 589.21,
             amountDifference: 12.88,
-            changeRate: 0.0125
+            changeRate: 0.0125,
+            price24h: (1...30).map { _ in Double.random(in: 560...615) }
         ),
         .init(
-            logoResource: .bitcoin,
+            logoResource: .solana,
             ticker: "SOL",
             fullName: "Solana",
             currentPrice: 142.66,
             amountDifference: -4.22,
-            changeRate: -0.0925
+            changeRate: -0.0925,
+            price24h: (1...30).map { _ in Double.random(in: 130...155) }
         ),
         .init(
-            logoResource: .bitcoin,
+            logoResource: .cardano,
             ticker: "ADA",
             fullName: "Cardano",
             currentPrice: 0.3765,
             amountDifference: 0.012,
-            changeRate: 0.025
+            changeRate: 0.025,
+            price24h: (1...30).map { _ in Double.random(in: 0.35...0.40) }
         ),
         .init(
-            logoResource: .bitcoin,
+            logoResource: .xrp,
             ticker: "XRP",
             fullName: "Ripple",
             currentPrice: 0.5692,
             amountDifference: -0.018,
-            changeRate: -0.0332
+            changeRate: -0.0332,
+            price24h: (1...30).map { _ in Double.random(in: 0.53...0.60) }
         ),
         .init(
-            logoResource: .bitcoin,
+            logoResource: .dogecoin,
             ticker: "DOGE",
             fullName: "Dogecoin",
             currentPrice: 0.1481,
             amountDifference: 0.0043,
-            changeRate: 0.0625
+            changeRate: 0.0625,
+            price24h: (1...30).map { _ in Double.random(in: 0.14...0.16) }
         ),
         .init(
-            logoResource: .bitcoin,
+            logoResource: .polkadot,
             ticker: "DOT",
             fullName: "Polkadot",
             currentPrice: 6.24,
             amountDifference: -0.31,
-            changeRate: -0.0625
+            changeRate: -0.0625,
+            price24h: (1...30).map { _ in Double.random(in: 5.9...6.6) }
         ),
         .init(
-            logoResource: .bitcoin,
+            logoResource: .avalanche,
             ticker: "AVAX",
             fullName: "Avalanche",
             currentPrice: 27.89,
             amountDifference: 0.96,
-            changeRate: 0.025
+            changeRate: 0.025,
+            price24h: (1...30).map { _ in Double.random(in: 26.0...29.5) }
         ),
         .init(
-            logoResource: .bitcoin,
+            logoResource: .chainlink,
             ticker: "LINK",
             fullName: "Chainlink",
             currentPrice: 14.03,
             amountDifference: 0.27,
-            changeRate: 0.0153
+            changeRate: 0.0153,
+            price24h: (1...30).map { _ in Double.random(in: 13.0...15.0) }
         )
     ]
 }

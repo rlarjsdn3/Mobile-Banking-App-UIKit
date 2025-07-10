@@ -57,21 +57,17 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="75" id="hpY-1y-gL5"/>
+                                                </constraints>
                                             </stackView>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="Tub-QB-C0c">
-                                        <rect key="frame" x="168.33333333333337" y="0.0" width="180.66666666666663" height="50"/>
+                                        <rect key="frame" x="279.33333333333331" y="0.0" width="69.666666666666686" height="50"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0UX-Ks-QBg">
-                                                <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="100" id="esw-hl-Pxo"/>
-                                                </constraints>
-                                            </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="pB7-ug-p4y">
-                                                <rect key="frame" x="110.99999999999997" y="3.6666666666666643" width="69.666666666666657" height="43"/>
+                                                <rect key="frame" x="0.0" y="3.6666666666666643" width="69.666666666666671" height="43"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$142.65" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PMC-NL-gGf">
                                                         <rect key="frame" x="0.0" y="0.0" width="69.666666666666671" height="21.666666666666668"/>
@@ -89,14 +85,25 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0UX-Ks-QBg" customClass="LineChartsView" customModule="MobileBanking" customModuleProvider="target">
+                                        <rect key="frame" x="154.66666666666666" y="5" width="80" height="40"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="esw-hl-Pxo"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="Tub-QB-C0c" secondAttribute="bottom" id="79g-Op-gQG"/>
+                                    <constraint firstAttribute="bottom" secondItem="0UX-Ks-QBg" secondAttribute="bottom" constant="5" id="8Qh-g9-pJo"/>
+                                    <constraint firstItem="0UX-Ks-QBg" firstAttribute="top" secondItem="UhP-Kc-UBE" secondAttribute="top" constant="5" id="9eS-i4-Cev"/>
+                                    <constraint firstItem="0UX-Ks-QBg" firstAttribute="centerY" secondItem="UhP-Kc-UBE" secondAttribute="centerY" id="LbJ-Fj-oEU"/>
                                     <constraint firstAttribute="bottom" secondItem="5JK-Oj-jZo" secondAttribute="bottom" id="Pi3-BZ-Tfz"/>
                                     <constraint firstItem="5JK-Oj-jZo" firstAttribute="top" secondItem="UhP-Kc-UBE" secondAttribute="top" id="R2H-oH-o6T"/>
                                     <constraint firstAttribute="trailing" secondItem="Tub-QB-C0c" secondAttribute="trailing" id="Rc7-sy-SXa"/>
                                     <constraint firstAttribute="height" constant="50" id="ULm-13-9lD"/>
+                                    <constraint firstItem="0UX-Ks-QBg" firstAttribute="centerX" secondItem="UhP-Kc-UBE" secondAttribute="centerX" constant="20" id="Y4W-ku-6Nq"/>
                                     <constraint firstItem="5JK-Oj-jZo" firstAttribute="leading" secondItem="UhP-Kc-UBE" secondAttribute="leading" id="nZk-zK-TKM"/>
                                     <constraint firstItem="5JK-Oj-jZo" firstAttribute="top" secondItem="Tub-QB-C0c" secondAttribute="top" id="r5g-9s-8He"/>
                                     <constraint firstItem="Tub-QB-C0c" firstAttribute="top" secondItem="UhP-Kc-UBE" secondAttribute="top" id="tDX-PN-LCU"/>
@@ -144,15 +151,15 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="bitcoin" width="512" height="512"/>
+        <image name="bitcoin" width="256" height="256"/>
         <systemColor name="secondaryLabelColor">
-            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray5Color">
-            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
