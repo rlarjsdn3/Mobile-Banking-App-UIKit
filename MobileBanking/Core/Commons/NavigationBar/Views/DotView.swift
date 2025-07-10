@@ -10,18 +10,15 @@ import UIKit
 final class DotView: UIView {
 
     private var circleLayer: CAShapeLayer?
-
-    ///
-    var circleOpacity: Float = 1.0 {
-        didSet { circleLayer?.opacity = circleOpacity }
-    }
-
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         backgroundColor = .systemBackground
     }
     
     override func draw(_ rect: CGRect) {
+        circleLayer?.removeFromSuperlayer()
+
         let inset = 2.5
         let insetedRect = rect.insetBy(dx: inset, dy: inset)
         let circle = UIBezierPath(ovalIn: insetedRect)

@@ -9,44 +9,52 @@ import UIKit
 
 final class LinearGradientView: UIView {
 
-    private var gradientLayer: CAGradientLayer!
-    
+    private var gradientLayer: CAGradientLayer?
+
     ///
     var colors: [UIColor] = [.systemBackground, .systemBackground.withAlphaComponent(0.0)] {
-        didSet { gradientLayer.colors = colors.map { $0.cgColor } }
+        didSet { drawGraient() }
     }
     
     ///
     var startPoint: CGPoint = CGPoint(x: 0.5, y: 0.0) {
-        didSet { gradientLayer.startPoint = startPoint }
+        didSet { drawGraient() }
     }
     
     ///
     var endPoint: CGPoint = CGPoint(x: 1.0, y: 0.0) {
-        didSet { gradientLayer.endPoint = endPoint }
+        didSet { drawGraient() }
     }
     
     ///
     var locations: [NSNumber]? {
-        didSet { gradientLayer.locations = locations }
+        didSet { drawGraient() }
     }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        gradientLayer = CAGradientLayer()
-        self.layer.addSublayer(gradientLayer)
+        setupAttributes()
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        setupAttributes()
+        drawGraient()
     }
 
     private func setupAttributes() {
         backgroundColor = .clear
+    }
 
-        apply(colors: colors)
-        gradientLayer.frame = self.bounds
+    private func drawGraient() {
+        gradientLayer?.removeFromSuperlayer()
+
+        gradientLayer = CAGradientLayer()
+        gradientLayer?.colors = colors.map { $0.cgColor }
+        gradientLayer?.startPoint = startPoint
+        gradientLayer?.endPoint = endPoint
+        gradientLayer?.locations = locations
+        gradientLayer?.frame = self.bounds
+        self.layer.insertSublayer(gradientLayer!, at: 0)
     }
 }
 

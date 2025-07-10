@@ -29,16 +29,6 @@ final class HomeNavigationBar: NibView {
         let title = "Hello Adom!"
         titleLabel.attributedText = NSAttributedString(string: title)
             .font(ofSize: 20, weight: .bold, from: title.firstIndex(of: " "))
-        
-        observation = sqaureButton.observe(\.isHighlighted, options: [.new]) { [weak self] button, changed in
-            Task { @MainActor in
-                if let newValue = changed.newValue, newValue {
-                    self?.dotView.circleOpacity = 0.75
-                } else {
-                    self?.dotView.circleOpacity = 1.0
-                }
-            }
-        }
     }
 
     override func layoutSubviews() {

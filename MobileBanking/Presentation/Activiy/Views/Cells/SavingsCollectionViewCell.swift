@@ -9,7 +9,7 @@ import UIKit
 
 final class SavingsCollectionViewCell: NibCollectionViewCell {
 
-    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var containerView: LinearGradientView!
     @IBOutlet weak var imageContainerView: UIView!
     @IBOutlet weak var imageView: UIImageView!
     
@@ -25,7 +25,11 @@ final class SavingsCollectionViewCell: NibCollectionViewCell {
     override func setupAttributes() {
         super.setupAttributes()
 
-        containerView.backgroundColor = .bankingGray
+        containerView.apply(
+            colors: [.bankingBlue, .bankingBlue.withAlphaComponent(0.6)],
+            startPoint: CGPoint(x: 0, y: 1),
+            endPoint: CGPoint(x: 1, y: 0)
+        )
         containerView.layer.cornerRadius = 32
         containerView.layer.masksToBounds = true
         imageContainerView.layer.cornerRadius = imageContainerView.frame.width / 2
